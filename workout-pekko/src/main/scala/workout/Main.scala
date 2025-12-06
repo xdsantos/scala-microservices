@@ -5,9 +5,10 @@ import org.apache.pekko.actor.typed.scaladsl.Behaviors
 import org.apache.pekko.http.scaladsl.Http
 import workout.api.WorkoutRoutes
 import workout.config.AppConfig
-import workout.kafka.{NoopEventProducer, PekkoKafkaProducer}
+import workout.kafka.{PekkoKafkaProducer, WorkoutCommandConsumer}
 import workout.repository.{DatabaseProvider, FlywayMigration, SlickWorkoutRepository}
 import workout.service.WorkoutServiceImpl
+import workout.tracing.Tracing
 import com.typesafe.scalalogging.LazyLogging
 
 import scala.concurrent.ExecutionContextExecutor
@@ -27,6 +28,11 @@ object Main extends App with LazyLogging {
   logger.info("=" * 60)
   logger.info(s"Database URL: ${config.database.url}")
   logger.info(s"Kafka Bootstrap: ${config.kafka.bootstrapServers}")
+  logger.info(s"Kafka Command Topic: ${config.kafka.commandTopic}")
+  logger.info(s"Tracing Enabled: ${config.tracing.enabled}")
+
+  // Initialize tracing
+  Tracing.init(config.tracing)
 
   // Run database migrations
   logger.info("Running database migrations...")
@@ -37,12 +43,18 @@ object Main extends App with LazyLogging {
   val database = DatabaseProvider.createDatabase(config.database)
   val repository = new SlickWorkoutRepository(database)
 
-  // Create Kafka producer (using noop for now)
+  // Create Kafka producer
   val eventProducer = new PekkoKafkaProducer(config.kafka)
-  // For real Kafka: val eventProducer = new PekkoKafkaProducer(config.kafka)
 
-  // Create service and routes
+  // Create service
   val service = new WorkoutServiceImpl(repository, eventProducer)
+
+  // Create and start Kafka consumer for workout commands
+  val commandConsumer = new WorkoutCommandConsumer(config.kafka, service)
+  val consumerControl = commandConsumer.start()
+  logger.info("Workout command consumer started")
+
+  // Create routes
   val routes = new WorkoutRoutes(service)
 
   // Start HTTP server
@@ -63,6 +75,8 @@ object Main extends App with LazyLogging {
   // Shutdown hook
   sys.addShutdownHook {
     logger.info("Shutting down...")
+    consumerControl.drainAndShutdown()(ec)
+    Tracing.shutdown()
     bindingFuture
       .flatMap(_.unbind())
       .onComplete { _ =>

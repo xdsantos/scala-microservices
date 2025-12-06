@@ -6,6 +6,8 @@ import org.apache.pekko.http.scaladsl.model.StatusCodes
 import workout.api.CirceSupport._
 import workout.domain._
 import workout.service.WorkoutService
+import workout.tracing.Tracing
+import io.opentelemetry.api.trace.SpanKind
 import com.typesafe.scalalogging.LazyLogging
 import io.circe.generic.auto._
 
@@ -35,7 +37,14 @@ class WorkoutRoutes(service: WorkoutService)(implicit ec: ExecutionContext) exte
         pathEnd {
           get {
             parameters("limit".as[Int].withDefault(100), "offset".as[Int].withDefault(0)) { (limit, offset) =>
-              onComplete(service.findAll(limit, offset)) {
+              val tracedFuture = Tracing.withSpanAsync("HTTP GET /api/workouts", SpanKind.SERVER) { span =>
+                span.setAttribute("http.method", "GET")
+                span.setAttribute("http.route", "/api/workouts")
+                span.setAttribute("query.limit", limit.toLong)
+                span.setAttribute("query.offset", offset.toLong)
+                service.findAll(limit, offset)
+              }
+              onComplete(tracedFuture) {
                 case Success(workouts) =>
                   complete(StatusCodes.OK -> WorkoutListResponse.success(workouts))
                 case Failure(ex) =>
@@ -46,15 +55,21 @@ class WorkoutRoutes(service: WorkoutService)(implicit ec: ExecutionContext) exte
           }
         },
 
-        // POST /api/workouts - Create workout
+        // POST /api/workouts - Create workout (async)
         pathEnd {
           post {
             entity(as[CreateWorkoutRequest]) { request =>
-              onComplete(service.create(request)) {
-                case Success(workout) =>
-                  complete(StatusCodes.Created -> WorkoutResponse.success(workout))
+              val tracedFuture = Tracing.withSpanAsync("HTTP POST /api/workouts", SpanKind.SERVER) { span =>
+                span.setAttribute("http.method", "POST")
+                span.setAttribute("http.route", "/api/workouts")
+                span.setAttribute("workout.name", request.name)
+                service.createAsync(request)
+              }
+              onComplete(tracedFuture) {
+                case Success(correlationId) =>
+                  complete(StatusCodes.Accepted -> AcceptedResponse(correlationId))
                 case Failure(ex) =>
-                  logger.error("Failed to create workout", ex)
+                  logger.error("Failed to submit workout creation request", ex)
                   complete(StatusCodes.InternalServerError -> WorkoutResponse.error(ex.getMessage))
               }
             }
@@ -102,7 +117,13 @@ class WorkoutRoutes(service: WorkoutService)(implicit ec: ExecutionContext) exte
           get {
             parseUUID(id) match {
               case Right(uuid) =>
-                onComplete(service.findById(uuid)) {
+                val tracedFuture = Tracing.withSpanAsync("HTTP GET /api/workouts/:id", SpanKind.SERVER) { span =>
+                  span.setAttribute("http.method", "GET")
+                  span.setAttribute("http.route", "/api/workouts/:id")
+                  span.setAttribute("workout.id", uuid.toString)
+                  service.findById(uuid)
+                }
+                onComplete(tracedFuture) {
                   case Success(Some(workout)) =>
                     complete(StatusCodes.OK -> WorkoutResponse.success(workout))
                   case Success(None) =>
@@ -123,7 +144,13 @@ class WorkoutRoutes(service: WorkoutService)(implicit ec: ExecutionContext) exte
             entity(as[UpdateWorkoutRequest]) { request =>
               parseUUID(id) match {
                 case Right(uuid) =>
-                  onComplete(service.update(uuid, request)) {
+                  val tracedFuture = Tracing.withSpanAsync("HTTP PUT /api/workouts/:id", SpanKind.SERVER) { span =>
+                    span.setAttribute("http.method", "PUT")
+                    span.setAttribute("http.route", "/api/workouts/:id")
+                    span.setAttribute("workout.id", uuid.toString)
+                    service.update(uuid, request)
+                  }
+                  onComplete(tracedFuture) {
                     case Success(Some(workout)) =>
                       complete(StatusCodes.OK -> WorkoutResponse.success(workout))
                     case Success(None) =>
@@ -144,7 +171,13 @@ class WorkoutRoutes(service: WorkoutService)(implicit ec: ExecutionContext) exte
           delete {
             parseUUID(id) match {
               case Right(uuid) =>
-                onComplete(service.delete(uuid)) {
+                val tracedFuture = Tracing.withSpanAsync("HTTP DELETE /api/workouts/:id", SpanKind.SERVER) { span =>
+                  span.setAttribute("http.method", "DELETE")
+                  span.setAttribute("http.route", "/api/workouts/:id")
+                  span.setAttribute("workout.id", uuid.toString)
+                  service.delete(uuid)
+                }
+                onComplete(tracedFuture) {
                   case Success(true) =>
                     complete(StatusCodes.OK -> DeleteResponse(success = true, s"Workout $id deleted successfully"))
                   case Success(false) =>

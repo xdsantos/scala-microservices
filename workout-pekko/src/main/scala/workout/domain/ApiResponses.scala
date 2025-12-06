@@ -48,3 +48,21 @@ object DeleteResponse {
   implicit val decoder: Decoder[DeleteResponse] = deriveDecoder[DeleteResponse]
 }
 
+case class AcceptedResponse(
+    success: Boolean,
+    correlationId: java.util.UUID,
+    message: String
+)
+
+object AcceptedResponse {
+  implicit val encoder: Encoder[AcceptedResponse] = deriveEncoder[AcceptedResponse]
+  implicit val decoder: Decoder[AcceptedResponse] = deriveDecoder[AcceptedResponse]
+
+  def apply(correlationId: java.util.UUID): AcceptedResponse =
+    AcceptedResponse(
+      success = true,
+      correlationId = correlationId,
+      message = "Request accepted for processing"
+    )
+}
+

@@ -8,6 +8,11 @@ import java.util.UUID
 
 class NoopEventProducer extends WorkoutEventProducer with LazyLogging {
 
+  override def publishCreateCommand(command: CreateWorkoutCommand): Future[UUID] = {
+    logger.info(s"[NOOP] Would publish create command with correlationId ${command.correlationId}")
+    Future.successful(command.correlationId)
+  }
+
   override def publishCreated(workout: Workout): Future[Unit] = {
     logger.info(s"[NOOP] Would publish created event for workout ${workout.id}")
     Future.successful(())

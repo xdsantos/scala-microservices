@@ -1,0 +1,14 @@
+{
+  "Servers": {
+    "1": {
+      "Name": "Workout DB",
+      "Group": "Servers",
+      "Host": "postgres",
+      "Port": 5432,
+      "MaintenanceDB": "workout_db",
+      "Username": "postgres",
+      "SSLMode": "prefer",
+      "PassFile": "/pgadmin4/pgpass"
+    }
+  }
+}

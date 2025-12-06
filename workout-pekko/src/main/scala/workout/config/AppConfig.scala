@@ -17,13 +17,22 @@ case class DatabaseConfig(
 
 case class KafkaConfig(
     bootstrapServers: String,
-    topic: String
+    topic: String,
+    commandTopic: String,
+    consumerGroup: String
+)
+
+case class TracingConfig(
+    enabled: Boolean,
+    serviceName: String,
+    endpoint: String
 )
 
 case class AppConfig(
     server: ServerConfig,
     database: DatabaseConfig,
-    kafka: KafkaConfig
+    kafka: KafkaConfig,
+    tracing: TracingConfig
 )
 
 object AppConfig {
@@ -47,7 +56,14 @@ object AppConfig {
       ),
       kafka = KafkaConfig(
         bootstrapServers = config.getString("app.kafka.bootstrap-servers"),
-        topic = config.getString("app.kafka.topic")
+        topic = config.getString("app.kafka.topic"),
+        commandTopic = config.getString("app.kafka.command-topic"),
+        consumerGroup = config.getString("app.kafka.consumer-group")
+      ),
+      tracing = TracingConfig(
+        enabled = config.getBoolean("app.tracing.enabled"),
+        serviceName = config.getString("app.tracing.service-name"),
+        endpoint = config.getString("app.tracing.endpoint")
       )
     )
   }

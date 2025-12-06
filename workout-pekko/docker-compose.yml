@@ -1,6 +1,16 @@
 version: '3.8'
 
 services:
+  jaeger:
+    image: jaegertracing/all-in-one:1.51
+    container_name: workout-pekko-jaeger
+    environment:
+      COLLECTOR_OTLP_ENABLED: "true"
+    ports:
+      - "18686:16686" # Jaeger UI (18686 due to Windows port restrictions)
+      - "4317:4317" # OTLP gRPC
+      - "4318:4318" # OTLP HTTP
+
   postgres:
     image: postgres:15-alpine
     container_name: workout-pekko-postgres
@@ -17,6 +27,23 @@ services:
       interval: 5s
       timeout: 5s
       retries: 5
+
+  pgadmin:
+    image: dpage/pgadmin4:latest
+    container_name: workout-pekko-pgadmin
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@admin.com
+      PGADMIN_DEFAULT_PASSWORD: admin
+      PGADMIN_CONFIG_SERVER_MODE: "False"
+      PGADMIN_SERVER_JSON_FILE: /pgadmin4/servers.json
+    ports:
+      - "5050:80"
+    depends_on:
+      - postgres
+    volumes:
+      - pgadmin_data:/var/lib/pgadmin
+      - ./pgadmin/servers.json:/pgadmin4/servers.json:ro
+      - ./pgadmin/pgpass:/pgadmin4/pgpass:ro
 
   zookeeper:
     image: confluentinc/cp-zookeeper:7.5.0
@@ -60,6 +87,8 @@ services:
         condition: service_healthy
       kafka:
         condition: service_healthy
+      jaeger:
+        condition: service_started
     ports:
       - "8089:8089"
     environment:
@@ -70,10 +99,15 @@ services:
       DATABASE_PASSWORD: "postgres"
       KAFKA_BOOTSTRAP_SERVERS: "kafka:29092"
       KAFKA_TOPIC: "workout-events"
+      KAFKA_COMMAND_TOPIC: "workout-commands"
+      KAFKA_CONSUMER_GROUP: "workout-pekko-service"
+      TRACING_ENABLED: "true"
+      OTEL_EXPORTER_OTLP_ENDPOINT: "http://jaeger:4317"
     profiles:
       - full
 
 volumes:
   postgres_data:
+  pgadmin_data:
 
 

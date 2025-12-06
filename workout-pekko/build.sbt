@@ -18,6 +18,7 @@ lazy val root = (project in file("."))
       val postgresVersion = "42.6.0"
       val circeVersion = "0.14.6"
       val testcontainersVersion = "0.41.0"
+      val openTelemetryVersion = "1.32.0"
 
       Seq(
         // Pekko
@@ -48,6 +49,12 @@ lazy val root = (project in file("."))
         // Logging
         "ch.qos.logback" % "logback-classic" % "1.4.11",
         "com.typesafe.scala-logging" %% "scala-logging" % "3.9.5",
+
+        // OpenTelemetry for tracing
+        "io.opentelemetry" % "opentelemetry-api" % openTelemetryVersion,
+        "io.opentelemetry" % "opentelemetry-sdk" % openTelemetryVersion,
+        "io.opentelemetry" % "opentelemetry-exporter-otlp" % openTelemetryVersion,
+        "io.opentelemetry" % "opentelemetry-semconv" % "1.23.1-alpha",
 
         // Testing
         "org.apache.pekko" %% "pekko-actor-testkit-typed" % pekkoVersion % Test,

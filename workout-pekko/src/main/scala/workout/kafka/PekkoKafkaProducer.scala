@@ -37,6 +37,20 @@ class PekkoKafkaProducer(config: KafkaConfig)(implicit system: ActorSystem[_], e
       }
   }
 
+  override def publishCreateCommand(command: CreateWorkoutCommand): Future[UUID] = {
+    val key = command.correlationId.toString
+    val value = command.asJson.noSpaces
+    val record = new ProducerRecord[String, String](config.commandTopic, key, value)
+
+    Source
+      .single(record)
+      .runWith(Producer.plainSink(producerSettings))
+      .map { _ =>
+        logger.info(s"Published CreateWorkoutCommand with correlationId: ${command.correlationId}")
+        command.correlationId
+      }
+  }
+
   override def publishCreated(workout: Workout): Future[Unit] =
     publish(WorkoutEvent.created(workout))
 
