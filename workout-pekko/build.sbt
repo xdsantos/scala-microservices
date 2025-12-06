@@ -12,7 +12,7 @@ lazy val root = (project in file("."))
     libraryDependencies ++= {
       val pekkoVersion = "1.0.2"
       val pekkoHttpVersion = "1.0.0"
-      val pekkoConnectorsVersion = "1.0.2"
+      val pekkoConnectorsVersion = "1.0.0"
       val slickVersion = "3.4.1"
       val flywayVersion = "9.22.3"
       val postgresVersion = "42.6.0"
@@ -64,7 +64,7 @@ lazy val root = (project in file("."))
     Docker / packageName := "workout-pekko-service",
     Docker / version := version.value,
     dockerBaseImage := "eclipse-temurin:17-jre-alpine",
-    dockerExposedPorts := Seq(8080),
+    dockerExposedPorts := Seq(8089),
     dockerUpdateLatest := true,
 
     // Native packager settings

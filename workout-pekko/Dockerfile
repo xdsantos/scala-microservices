@@ -25,6 +25,9 @@ RUN sbt stage
 # Production image
 FROM eclipse-temurin:17-jre-alpine
 
+# Install bash (required by sbt-native-packager scripts)
+RUN apk add --no-cache bash
+
 WORKDIR /app
 
 # Copy the staged application
@@ -37,7 +40,7 @@ RUN addgroup -g 1001 -S appgroup && \
 
 USER appuser
 
-EXPOSE 8080
+EXPOSE 8089
 
 ENTRYPOINT ["./bin/workout-pekko-service"]
 

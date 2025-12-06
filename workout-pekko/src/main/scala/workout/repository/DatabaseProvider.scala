@@ -16,7 +16,7 @@ object DatabaseProvider extends LazyLogging {
       driver = config.driver,
       executor = AsyncExecutor(
         name = "workout-db-executor",
-        minThreads = 2,
+        minThreads = config.numThreads,
         maxThreads = config.numThreads,
         queueSize = 1000,
         maxConnections = config.numThreads

@@ -12,12 +12,8 @@ trait SlickTypeMappers {
       instant => Timestamp.from(instant),
       timestamp => timestamp.toInstant
     )
-
-  implicit val uuidColumnType: BaseColumnType[UUID] =
-    MappedColumnType.base[UUID, String](
-      uuid => uuid.toString,
-      str => UUID.fromString(str)
-    )
+  
+  // Note: PostgresProfile already has native UUID support, no custom mapper needed
 }
 
 object SlickTypeMappers extends SlickTypeMappers
