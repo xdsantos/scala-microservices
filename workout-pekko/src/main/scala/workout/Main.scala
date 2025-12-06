@@ -5,7 +5,7 @@ import org.apache.pekko.actor.typed.scaladsl.Behaviors
 import org.apache.pekko.http.scaladsl.Http
 import workout.api.WorkoutRoutes
 import workout.config.AppConfig
-import workout.kafka.NoopEventProducer
+import workout.kafka.{NoopEventProducer, PekkoKafkaProducer}
 import workout.repository.{DatabaseProvider, FlywayMigration, SlickWorkoutRepository}
 import workout.service.WorkoutServiceImpl
 import com.typesafe.scalalogging.LazyLogging
@@ -38,7 +38,7 @@ object Main extends App with LazyLogging {
   val repository = new SlickWorkoutRepository(database)
 
   // Create Kafka producer (using noop for now)
-  val eventProducer = new NoopEventProducer()
+  val eventProducer = new PekkoKafkaProducer(config.kafka)
   // For real Kafka: val eventProducer = new PekkoKafkaProducer(config.kafka)
 
   // Create service and routes
