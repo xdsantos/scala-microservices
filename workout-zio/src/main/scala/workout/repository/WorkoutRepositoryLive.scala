@@ -52,8 +52,7 @@ final case class WorkoutRepositoryLive(quill: Quill.Postgres[SnakeCase]) extends
       result <- rows.headOption match {
         case Some(row) =>
           ZIO.fromEither(WorkoutRow.toDomain(row))
-            .mapError(e => new RuntimeException(e))
-            .map(Some(_))
+            .mapBoth(e => new RuntimeException(e), Some(_))
         case None => ZIO.succeed(None)
       }
     } yield result

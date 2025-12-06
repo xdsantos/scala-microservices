@@ -25,12 +25,10 @@ object WorkoutRoutes {
 
   val routes: Routes[WorkoutService, Nothing] =
     Routes(
-      // Health check
       Method.GET / "health" -> handler {
         Response.json("""{"status":"healthy","service":"workout-service"}""")
       },
 
-      // Get all workouts
       Method.GET / "api" / "workouts" -> handler { (req: Request) =>
         val limit = getIntParam(req, "limit", 100)
         val offset = getIntParam(req, "offset", 0)
@@ -42,7 +40,6 @@ object WorkoutRoutes {
           )
       },
 
-      // Get workout by ID
       Method.GET / "api" / "workouts" / string("id") -> handler { (id: String, req: Request) =>
         (for {
           uuid <- ZIO.fromEither(parseUUID(id)).mapError(new IllegalArgumentException(_))
@@ -58,7 +55,6 @@ object WorkoutRoutes {
         }
       },
 
-      // Create workout
       Method.POST / "api" / "workouts" -> handler { (req: Request) =>
         (for {
           body <- req.body.asString
@@ -74,7 +70,6 @@ object WorkoutRoutes {
         }
       },
 
-      // Update workout
       Method.PUT / "api" / "workouts" / string("id") -> handler { (id: String, req: Request) =>
         (for {
           uuid <- ZIO.fromEither(parseUUID(id)).mapError(new IllegalArgumentException(_))
@@ -93,15 +88,14 @@ object WorkoutRoutes {
         }
       },
 
-      // Delete workout
       Method.DELETE / "api" / "workouts" / string("id") -> handler { (id: String, req: Request) =>
         (for {
           uuid <- ZIO.fromEither(parseUUID(id)).mapError(new IllegalArgumentException(_))
           deleted <- WorkoutService.delete(uuid)
         } yield if (deleted) {
-          Response.json(DeleteResponse(true, s"Workout $id deleted successfully").toJson)
+          Response.json(DeleteResponse(success = true, s"Workout $id deleted successfully").toJson)
         } else {
-          Response.json(DeleteResponse(false, s"Workout not found: $id").toJson).status(Status.NotFound)
+          Response.json(DeleteResponse(success = false, s"Workout not found: $id").toJson).status(Status.NotFound)
         }).catchAll {
           case e: IllegalArgumentException =>
             ZIO.succeed(Response.json(WorkoutResponse.error(e.getMessage).toJson).status(Status.BadRequest))
