@@ -21,6 +21,14 @@ final case class WorkoutEventProducerLive(
     producer.produce(record, Serde.string, Serde.string).unit
   }
 
+  override def publishCreateCommand(command: CreateWorkoutCommand): Task[UUID] = {
+    val key = command.correlationId.toString
+    val value = command.toJson
+    val record = new ProducerRecord[String, String](config.commandTopic, key, value)
+    producer.produce(record, Serde.string, Serde.string)
+      .as(command.correlationId)
+  }
+
   override def publishCreated(workout: Workout): Task[Unit] =
     publish(WorkoutEvent.created(workout))
 

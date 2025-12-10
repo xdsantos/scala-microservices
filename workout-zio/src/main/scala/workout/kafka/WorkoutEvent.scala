@@ -1,6 +1,6 @@
 package workout.kafka
 
-import workout.domain.Workout
+import workout.domain.{CreateWorkoutRequest, Workout}
 import zio.json._
 import java.util.UUID
 
@@ -37,5 +37,37 @@ object WorkoutEvent {
       workoutId = workoutId,
       workout = None,
       timestamp = System.currentTimeMillis()
+    )
+}
+
+// Command to create a workout (sent to Kafka for async processing)
+final case class CreateWorkoutCommand(
+    correlationId: UUID,
+    request: CreateWorkoutRequest,
+    timestamp: Long,
+    traceId: Option[String],
+    spanId: Option[String]
+)
+
+object CreateWorkoutCommand {
+  implicit val encoder: JsonEncoder[CreateWorkoutCommand] = DeriveJsonEncoder.gen[CreateWorkoutCommand]
+  implicit val decoder: JsonDecoder[CreateWorkoutCommand] = DeriveJsonDecoder.gen[CreateWorkoutCommand]
+
+  def apply(request: CreateWorkoutRequest): CreateWorkoutCommand =
+    CreateWorkoutCommand(
+      correlationId = UUID.randomUUID(),
+      request = request,
+      timestamp = System.currentTimeMillis(),
+      traceId = None,
+      spanId = None
+    )
+
+  def apply(request: CreateWorkoutRequest, traceId: String, spanId: String): CreateWorkoutCommand =
+    CreateWorkoutCommand(
+      correlationId = UUID.randomUUID(),
+      request = request,
+      timestamp = System.currentTimeMillis(),
+      traceId = Some(traceId),
+      spanId = Some(spanId)
     )
 }

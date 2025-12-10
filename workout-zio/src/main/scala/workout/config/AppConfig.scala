@@ -19,6 +19,7 @@ final case class DatabaseConfig(
 final case class KafkaConfig(
     bootstrapServers: String,
     topic: String,
+    commandTopic: String,
     groupId: String
 )
 
@@ -56,6 +57,7 @@ object AppConfig {
           kafka = KafkaConfig(
             bootstrapServers = config.getString("app.kafka.bootstrap-servers"),
             topic = config.getString("app.kafka.topic"),
+            commandTopic = config.getString("app.kafka.command-topic"),
             groupId = config.getString("app.kafka.group-id")
           ),
           telemetry = TelemetryConfig(

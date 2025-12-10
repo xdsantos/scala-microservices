@@ -13,7 +13,7 @@ services:
     volumes:
       - postgres_data:/var/lib/postgresql/data
     healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      test: [ "CMD-SHELL", "pg_isready -U postgres" ]
       interval: 5s
       timeout: 5s
       retries: 5
@@ -44,26 +44,50 @@ services:
       KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
       KAFKA_AUTO_CREATE_TOPICS_ENABLE: "true"
     healthcheck:
-      test: ["CMD-SHELL", "kafka-topics --bootstrap-server localhost:9092 --list"]
+      test: [ "CMD-SHELL", "kafka-topics --bootstrap-server localhost:9092 --list" ]
       interval: 10s
       timeout: 10s
       retries: 5
 
-  # Optional: Jaeger for distributed tracing
+  # Jaeger for distributed tracing
   jaeger:
-    image: jaegertracing/all-in-one:1.50
-    container_name: workout-jaeger
+    image: jaegertracing/all-in-one:1.51
+    container_name: workout-zio-jaeger
     ports:
-      - "18686:16686"  # Jaeger UI (mapped to 18686 to avoid Windows port conflicts)
-      - "4317:4317"    # OTLP gRPC
-      - "4318:4318"    # OTLP HTTP
+      - "18687:16686" # Jaeger UI (mapped to 18687 to avoid conflicts with pekko)
+      - "4319:4317" # OTLP gRPC (mapped to 4319 to avoid conflicts)
+      - "4320:4318" # OTLP HTTP
     environment:
       COLLECTOR_OTLP_ENABLED: "true"
 
+  # pgAdmin for database management
+  pgadmin:
+    image: dpage/pgadmin4:latest
+    container_name: workout-zio-pgadmin
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@admin.com
+      PGADMIN_DEFAULT_PASSWORD: admin
+      PGADMIN_CONFIG_SERVER_MODE: "False"
+    ports:
+      - "5051:80"
+    depends_on:
+      - postgres
+    volumes:
+      - pgadmin_data:/var/lib/pgadmin
+
+  # Adminer - lightweight DB admin
+  adminer:
+    image: adminer:latest
+    container_name: workout-zio-adminer
+    ports:
+      - "8082:8080"
+    depends_on:
+      - postgres
+
   # The workout service itself (when built)
   workout-service:
-    image: workout-service:latest
-    container_name: workout-service
+    image: workout-zio-service:latest
+    container_name: workout-zio-service
     build:
       context: .
       dockerfile: Dockerfile
@@ -72,6 +96,8 @@ services:
         condition: service_healthy
       kafka:
         condition: service_healthy
+      jaeger:
+        condition: service_started
     ports:
       - "8081:8080"
     environment:
@@ -82,12 +108,16 @@ services:
       DATABASE_PASSWORD: "postgres"
       KAFKA_BOOTSTRAP_SERVERS: "kafka:29092"
       KAFKA_TOPIC: "workout-events"
+      KAFKA_COMMAND_TOPIC: "workout-commands"
+      KAFKA_GROUP_ID: "workout-zio-service"
       OTEL_ENABLED: "true"
-      OTEL_SERVICE_NAME: "workout-service"
+      OTEL_SERVICE_NAME: "workout-zio-service"
       OTEL_EXPORTER_OTLP_ENDPOINT: "http://jaeger:4317"
     profiles:
-      - full  # Only start with `docker-compose --profile full up`
+      - full # Only start with `docker-compose --profile full up`
 
 volumes:
   postgres_data:
+  pgadmin_data:
+
 

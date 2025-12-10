@@ -8,6 +8,8 @@ import zio.json._
 import java.util.UUID
 import scala.util.Try
 
+// Import AcceptedResponse for async responses
+
 object WorkoutRoutes {
 
   private def parseUUID(str: String): Either[String, UUID] =
@@ -55,13 +57,14 @@ object WorkoutRoutes {
         }
       },
 
+      // POST /api/workouts - Create workout (async)
       Method.POST / "api" / "workouts" -> handler { (req: Request) =>
         (for {
           body <- req.body.asString
           createReq <- ZIO.fromEither(body.fromJson[CreateWorkoutRequest])
             .mapError(e => new IllegalArgumentException(s"Invalid request body: $e"))
-          workout <- WorkoutService.create(createReq)
-        } yield Response.json(WorkoutResponse.success(workout).toJson).status(Status.Created)
+          correlationId <- WorkoutService.createAsync(createReq)
+        } yield Response.json(AcceptedResponse(correlationId).toJson).status(Status.Accepted)
         ).catchAll {
           case e: IllegalArgumentException =>
             ZIO.succeed(Response.json(WorkoutResponse.error(e.getMessage).toJson).status(Status.BadRequest))

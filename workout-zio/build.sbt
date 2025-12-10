@@ -49,12 +49,10 @@ lazy val root = (project in file("."))
         // Configuration
         "com.typesafe" % "config" % "1.4.3",
         
-        // OpenTelemetry
+        // OpenTelemetry (manual wiring to avoid auto-global registration)
         "io.opentelemetry" % "opentelemetry-api" % otelVersion,
         "io.opentelemetry" % "opentelemetry-sdk" % otelVersion,
         "io.opentelemetry" % "opentelemetry-exporter-otlp" % otelVersion,
-        "io.opentelemetry" % "opentelemetry-sdk-extension-autoconfigure" % otelVersion,
-        "io.opentelemetry.instrumentation" % "opentelemetry-instrumentation-annotations" % "1.32.0",
         
         // Logging
         "ch.qos.logback" % "logback-classic" % "1.4.11",

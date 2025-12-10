@@ -5,6 +5,9 @@ import zio._
 import java.util.UUID
 
 trait WorkoutService {
+  /** Async create - publishes to Kafka and returns correlationId */
+  def createAsync(request: CreateWorkoutRequest): Task[UUID]
+  /** Direct create - saves to DB (used by consumer) */
   def create(request: CreateWorkoutRequest): Task[Workout]
   def findById(id: UUID): Task[Option[Workout]]
   def findAll(limit: Int, offset: Int): Task[List[Workout]]
@@ -15,6 +18,9 @@ trait WorkoutService {
 }
 
 object WorkoutService {
+  def createAsync(request: CreateWorkoutRequest): ZIO[WorkoutService, Throwable, UUID] =
+    ZIO.serviceWithZIO[WorkoutService](_.createAsync(request))
+
   def create(request: CreateWorkoutRequest): ZIO[WorkoutService, Throwable, Workout] =
     ZIO.serviceWithZIO[WorkoutService](_.create(request))
 
