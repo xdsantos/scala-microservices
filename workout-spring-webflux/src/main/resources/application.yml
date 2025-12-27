@@ -32,6 +32,13 @@ kafka:
     events: workout-events
   group-id: workout-spring-webflux
 
+logging:
+  file:
+    name: /app/logs/application.log
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - [traceId=%X{traceId} spanId=%16X{spanId}] - %msg%n"
+    file: "%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - [traceId=%X{traceId} spanId=%16X{spanId}] - %msg%n"
+
 management:
   tracing:
     sampling:
@@ -42,7 +49,10 @@ management:
   endpoints:
     web:
       exposure:
-        include: health,info,metrics,tracing
+        include: health,info,metrics,tracing,logfile,env,beans
+  endpoint:
+    logfile:
+      external-file: /app/logs/application.log
 
 # Remove old otel/tracing block if it exists
 

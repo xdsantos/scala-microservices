@@ -69,6 +69,14 @@ services:
     ports:
       - "8084:8080"
 
+  dozzle:
+    image: amir20/dozzle:latest
+    container_name: workout-webflux-dozzle
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    ports:
+      - "8888:8080"
+
   workout-webflux-service:
     build:
       context: .
@@ -84,8 +92,11 @@ services:
         condition: service_started
     ports:
       - "8083:8083"
+    volumes:
+      - ./logs:/app/logs
     environment:
       SERVER_PORT: "8083"
+      SERVICE_HOST: "workout-webflux-service"
       DB_HOST: "postgres"
       DB_PORT: "5432"
       DB_USER: "postgres"
@@ -96,6 +107,7 @@ services:
       KAFKA_GROUP_ID: "workout-webflux-service"
       OTEL_ENABLED: "true"
       OTEL_EXPORTER_OTLP_ENDPOINT: "http://jaeger:4318/v1/traces"
+      ADMIN_SERVER_HOST: "spring-boot-admin"
     profiles:
       - full
 

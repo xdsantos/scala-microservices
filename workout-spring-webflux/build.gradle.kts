@@ -16,6 +16,7 @@ dependencies {
     implementation("org.springframework.boot:spring-boot-starter-webflux")
     implementation("org.springframework.boot:spring-boot-starter-validation")
     implementation("org.springframework.boot:spring-boot-starter-actuator")
+    implementation("de.codecentric:spring-boot-admin-starter-client:3.2.0")
 
     // R2DBC Postgres + Flyway
     implementation("org.springframework.boot:spring-boot-starter-data-r2dbc")
