@@ -16,7 +16,12 @@ dependencies {
     implementation("org.springframework.boot:spring-boot-starter-webflux")
     implementation("org.springframework.boot:spring-boot-starter-validation")
     implementation("org.springframework.boot:spring-boot-starter-actuator")
-    implementation("de.codecentric:spring-boot-admin-starter-client:3.2.0")
+
+    // Micrometer Tracing + Reactor + OTel Bridge (for Jaeger export)
+    implementation("io.micrometer:micrometer-tracing-bridge-otel")
+    implementation("io.micrometer:context-propagation")
+    implementation("io.projectreactor:reactor-core-micrometer")
+    implementation("io.opentelemetry:opentelemetry-exporter-otlp")
 
     // R2DBC Postgres + Flyway
     implementation("org.springframework.boot:spring-boot-starter-data-r2dbc")
@@ -26,12 +31,7 @@ dependencies {
 
     // Kafka
     implementation("org.springframework.kafka:spring-kafka")
-
-    // Observability / OTel
-    implementation("io.micrometer:micrometer-tracing-bridge-otel")
-    implementation("io.micrometer:context-propagation")
-    implementation("io.opentelemetry:opentelemetry-exporter-otlp")
-    implementation("io.opentelemetry:opentelemetry-sdk")
+    implementation("io.projectreactor.kafka:reactor-kafka")
 
     // Lombok
     compileOnly("org.projectlombok:lombok:1.18.30")

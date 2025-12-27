@@ -33,6 +33,8 @@ kafka:
   group-id: workout-spring-webflux
 
 logging:
+  level:
+    com.workout.app.kafka.WorkoutCommandConsumer: DEBUG
   file:
     name: /app/logs/application.log
   pattern:

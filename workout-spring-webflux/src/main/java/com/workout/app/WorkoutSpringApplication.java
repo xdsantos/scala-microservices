@@ -1,6 +1,5 @@
 package com.workout.app;
 
-import io.micrometer.observation.contextpropagation.ObservationThreadLocalAccessor;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import reactor.core.publisher.Hooks;
@@ -15,8 +14,7 @@ public class WorkoutSpringApplication {
 
     @PostConstruct
     public void init() {
+        // Bridges Reactor context with Micrometer/ThreadLocal
         Hooks.enableAutomaticContextPropagation();
-        ObservationThreadLocalAccessor.getInstance(); // This triggers registration
     }
 }
-

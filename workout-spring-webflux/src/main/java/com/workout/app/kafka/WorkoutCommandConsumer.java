@@ -1,18 +1,22 @@
 package com.workout.app.kafka;
 
+import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.workout.app.api.dto.CreateWorkoutRequest;
 import com.workout.app.service.WorkoutService;
-import io.micrometer.tracing.Span;
-import io.micrometer.tracing.Tracer;
-import io.micrometer.tracing.propagation.Propagator;
+import io.micrometer.observation.Observation;
+import io.micrometer.observation.ObservationRegistry;
+import io.micrometer.observation.contextpropagation.ObservationThreadLocalAccessor;
+import jakarta.annotation.PostConstruct;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.apache.kafka.clients.consumer.ConsumerRecord;
-import org.springframework.kafka.annotation.KafkaListener;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
+import reactor.core.publisher.Mono;
+import reactor.kafka.receiver.KafkaReceiver;
+import reactor.kafka.receiver.observation.KafkaReceiverObservation;
+import reactor.kafka.receiver.observation.KafkaRecordReceiverContext;
 
-import java.nio.charset.StandardCharsets;
 import java.util.Map;
 
 @Slf4j
@@ -22,40 +26,53 @@ public class WorkoutCommandConsumer {
 
     private final WorkoutService workoutService;
     private final ObjectMapper objectMapper;
-    private final Tracer tracer;
-    private final Propagator propagator;
+    private final KafkaReceiver<String, String> kafkaReceiver;
+    private final ObservationRegistry observationRegistry;
 
-    @KafkaListener(topics = "${kafka.topics.commands}", groupId = "${kafka.group-id}")
-    public void consume(ConsumerRecord<String, String> record) {
-        try {
-            String message = record.value();
-            Map<String, Object> map = objectMapper.readValue(message, Map.class);
-            String correlationId = (String) map.get("correlationId");
-            
-            CreateWorkoutRequest request = objectMapper.convertValue(map.get("request"), CreateWorkoutRequest.class);
-            log.info("Received create command for correlationId: {}", correlationId);
+    @Value("${spring.kafka.bootstrap-servers}")
+    private String bootstrapServers;
 
-            // Extract trace context from headers
-            Span.Builder spanBuilder = propagator.extract(record.headers(), (headers, key) -> {
-                if (headers.lastHeader(key) != null) {
-                    return new String(headers.lastHeader(key).value(), StandardCharsets.UTF_8);
-                }
-                return null;
-            });
+    @PostConstruct
+    public void start() {
+        log.info("Starting Kafka consumer...");
+        
+        kafkaReceiver.receive()
+                .flatMap(event -> {
+                    Observation receiverObservation = KafkaReceiverObservation.RECEIVER_OBSERVATION.start(
+                            null,
+                            KafkaReceiverObservation.DefaultKafkaReceiverObservationConvention.INSTANCE,
+                            () -> new KafkaRecordReceiverContext(event, "workout.receiver", bootstrapServers),
+                            observationRegistry);
 
-            Span span = spanBuilder.name("workout.command.consume").start();
-            
-            try (Tracer.SpanInScope scope = tracer.withSpan(span)) {
-                log.info("Consumer processing within linked trace from headers: traceId={}", span.context().traceId());
-                workoutService.create(request).block();
-            } finally {
-                span.end();
+                    return processMessage(event.value())
+                            .doOnTerminate(receiverObservation::stop)
+                            .doOnError(receiverObservation::error)
+                            .contextWrite(context -> context.put(ObservationThreadLocalAccessor.KEY, receiverObservation))
+                            .doOnSuccess(v -> {
+                                event.receiverOffset().acknowledge();
+                                log.info("Successfully processed and acknowledged record");
+                            })
+                            .onErrorResume(e -> {
+                                log.error("Error processing Kafka message", e);
+                                return Mono.empty();
+                            });
+                })
+                .subscribe();
+    }
+
+    private Mono<Void> processMessage(String message) {
+        return Mono.defer(() -> {
+            try {
+                Map<String, Object> map = objectMapper.readValue(message, new TypeReference<>() {});
+                String correlationId = (String) map.get("correlationId");
+                CreateWorkoutRequest request = objectMapper.convertValue(map.get("request"), CreateWorkoutRequest.class);
+                
+                log.info("Processing workout creation for correlationId: {}", correlationId);
+
+                return workoutService.create(request).then();
+            } catch (Exception e) {
+                return Mono.error(e);
             }
-
-        } catch (Exception e) {
-            log.error("Error processing Kafka message", e);
-            throw new RuntimeException(e);
-        }
+        });
     }
 }
-

@@ -32,14 +32,9 @@ kafka:
     events: workout-events
   group-id: workout-spring-webflux
 
-  boot:
-    admin:
-      client:
-        url: http://${ADMIN_SERVER_HOST:localhost}:8085
-        instance:
-          service-base-url: http://${SERVICE_HOST:localhost}:${SERVER_PORT:8083}
-
 logging:
+  level:
+    com.workout.app.kafka.WorkoutCommandConsumer: DEBUG
   file:
     name: /app/logs/application.log
   pattern:

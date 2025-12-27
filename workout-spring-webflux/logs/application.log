@@ -382,3 +382,2715 @@
 2025-12-27 14:45:22 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  c.w.app.kafka.WorkoutCommandConsumer - [traceId=fbdcef161348165ee429f49ddb15b1fe spanId=3c40a1c7e62d0d4a] - Received create command for correlationId: cd6d3fd6-5732-4f47-9ec2-7f56f7b35920
 2025-12-27 14:45:22 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  c.w.app.kafka.WorkoutCommandConsumer - [traceId=fbdcef161348165ee429f49ddb15b1fe spanId=a478b99168dce9d7] - Consumer processing within linked trace from headers: traceId=fbdcef161348165ee429f49ddb15b1fe
 2025-12-27 14:45:22 [reactor-tcp-epoll-1] INFO  c.workout.app.service.WorkoutService - [traceId=fbdcef161348165ee429f49ddb15b1fe spanId=3c40a1c7e62d0d4a] - Saved workout to database with id: 69d02a3c-e9f0-42b8-af7b-cc11be30d065
+2025-12-27 21:23:19 [main] INFO  c.w.app.WorkoutSpringApplication - [traceId= spanId=                ] - Starting WorkoutSpringApplication v0.1.0-SNAPSHOT using Java 17.0.17 with PID 1 (/app/app.jar started by root in /app)
+2025-12-27 21:23:19 [main] INFO  c.w.app.WorkoutSpringApplication - [traceId= spanId=                ] - No active profile set, falling back to 1 default profile: "default"
+2025-12-27 21:23:20 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - [traceId= spanId=                ] - Bootstrapping Spring Data R2DBC repositories in DEFAULT mode.
+2025-12-27 21:23:21 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - [traceId= spanId=                ] - Finished Spring Data repository scanning in 120 ms. Found 1 R2DBC repository interface.
+2025-12-27 21:23:23 [main] INFO  o.s.b.a.e.web.EndpointLinksResolver - [traceId= spanId=                ] - Exposing 6 endpoint(s) beneath base path '/actuator'
+2025-12-27 21:23:23 [main] INFO  o.f.c.i.license.VersionPrinter - [traceId= spanId=                ] - Flyway Community Edition 9.22.3 by Redgate
+2025-12-27 21:23:23 [main] INFO  o.f.c.i.license.VersionPrinter - [traceId= spanId=                ] - See release notes here: https://rd.gt/416ObMi
+2025-12-27 21:23:23 [main] INFO  o.f.c.i.license.VersionPrinter - [traceId= spanId=                ] - 
+2025-12-27 21:23:23 [main] INFO  org.flywaydb.core.FlywayExecutor - [traceId= spanId=                ] - Database: jdbc:postgresql://postgres:5432/workout_db (PostgreSQL 15.15)
+2025-12-27 21:23:24 [main] INFO  o.f.core.internal.command.DbValidate - [traceId= spanId=                ] - Successfully validated 1 migration (execution time 00:00.023s)
+2025-12-27 21:23:24 [main] INFO  o.f.core.internal.command.DbMigrate - [traceId= spanId=                ] - Current version of schema "public": 1
+2025-12-27 21:23:24 [main] INFO  o.f.core.internal.command.DbMigrate - [traceId= spanId=                ] - Schema "public" is up to date. No migration necessary.
+2025-12-27 21:23:24 [main] INFO  o.a.k.c.admin.AdminClientConfig - [traceId= spanId=                ] - AdminClientConfig values: 
+	auto.include.jmx.reporter = true
+	bootstrap.servers = [kafka:29092]
+	client.dns.lookup = use_all_dns_ips
+	client.id = 
+	connections.max.idle.ms = 300000
+	default.api.timeout.ms = 60000
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 2147483647
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+
+2025-12-27 21:23:24 [main] INFO  o.a.kafka.common.utils.AppInfoParser - [traceId= spanId=                ] - Kafka version: 3.6.0
+2025-12-27 21:23:24 [main] INFO  o.a.kafka.common.utils.AppInfoParser - [traceId= spanId=                ] - Kafka commitId: 60e845626d8a465a
+2025-12-27 21:23:24 [main] INFO  o.a.kafka.common.utils.AppInfoParser - [traceId= spanId=                ] - Kafka startTimeMs: 1766870604308
+2025-12-27 21:23:24 [kafka-admin-client-thread | adminclient-1] INFO  o.a.kafka.common.utils.AppInfoParser - [traceId= spanId=                ] - App info kafka.admin.client for adminclient-1 unregistered
+2025-12-27 21:23:24 [kafka-admin-client-thread | adminclient-1] INFO  o.a.kafka.common.metrics.Metrics - [traceId= spanId=                ] - Metrics scheduler closed
+2025-12-27 21:23:24 [kafka-admin-client-thread | adminclient-1] INFO  o.a.kafka.common.metrics.Metrics - [traceId= spanId=                ] - Closing reporter org.apache.kafka.common.metrics.JmxReporter
+2025-12-27 21:23:24 [kafka-admin-client-thread | adminclient-1] INFO  o.a.kafka.common.metrics.Metrics - [traceId= spanId=                ] - Metrics reporters closed
+2025-12-27 21:23:24 [main] INFO  o.s.b.w.e.netty.NettyWebServer - [traceId= spanId=                ] - Netty started on port 8083
+2025-12-27 21:23:24 [main] INFO  o.a.k.c.consumer.ConsumerConfig - [traceId= spanId=                ] - ConsumerConfig values: 
+	allow.auto.create.topics = true
+	auto.commit.interval.ms = 5000
+	auto.include.jmx.reporter = true
+	auto.offset.reset = latest
+	bootstrap.servers = [kafka:29092]
+	check.crcs = true
+	client.dns.lookup = use_all_dns_ips
+	client.id = consumer-workout-webflux-service-1
+	client.rack = 
+	connections.max.idle.ms = 540000
+	default.api.timeout.ms = 60000
+	enable.auto.commit = false
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = workout-webflux-service
+	group.instance.id = null
+	heartbeat.interval.ms = 3000
+	interceptor.classes = []
+	internal.leave.group.on.close = true
+	internal.throw.on.fetch.stable.offset.unsupported = false
+	isolation.level = read_uncommitted
+	key.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+	max.partition.fetch.bytes = 1048576
+	max.poll.interval.ms = 300000
+	max.poll.records = 500
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor, class org.apache.kafka.clients.consumer.CooperativeStickyAssignor]
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	session.timeout.ms = 45000
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+
+2025-12-27 21:23:24 [main] INFO  o.a.kafka.common.utils.AppInfoParser - [traceId= spanId=                ] - Kafka version: 3.6.0
+2025-12-27 21:23:24 [main] INFO  o.a.kafka.common.utils.AppInfoParser - [traceId= spanId=                ] - Kafka commitId: 60e845626d8a465a
+2025-12-27 21:23:24 [main] INFO  o.a.kafka.common.utils.AppInfoParser - [traceId= spanId=                ] - Kafka startTimeMs: 1766870604723
+2025-12-27 21:23:24 [main] INFO  o.s.k.c.DefaultKafkaConsumerFactory$ExtendedKafkaConsumer - [traceId= spanId=                ] - [Consumer clientId=consumer-workout-webflux-service-1, groupId=workout-webflux-service] Subscribed to topic(s): workout-commands
+2025-12-27 21:23:24 [main] INFO  c.w.app.WorkoutSpringApplication - [traceId= spanId=                ] - Started WorkoutSpringApplication in 5.659 seconds (process running for 6.2)
+2025-12-27 21:23:24 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  org.apache.kafka.clients.Metadata - [traceId= spanId=                ] - [Consumer clientId=consumer-workout-webflux-service-1, groupId=workout-webflux-service] Cluster ID: EQy0TdwkRu2irAZJeb4lHw
+2025-12-27 21:23:24 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [traceId= spanId=                ] - [Consumer clientId=consumer-workout-webflux-service-1, groupId=workout-webflux-service] Discovered group coordinator kafka:29092 (id: 2147483644 rack: null)
+2025-12-27 21:23:24 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [traceId= spanId=                ] - [Consumer clientId=consumer-workout-webflux-service-1, groupId=workout-webflux-service] (Re-)joining group
+2025-12-27 21:23:24 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [traceId= spanId=                ] - [Consumer clientId=consumer-workout-webflux-service-1, groupId=workout-webflux-service] Request joining group due to: need to re-join with the given member-id: consumer-workout-webflux-service-1-115dadaa-c2a4-447c-a48e-e016f5d1b7dc
+2025-12-27 21:23:24 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [traceId= spanId=                ] - [Consumer clientId=consumer-workout-webflux-service-1, groupId=workout-webflux-service] Request joining group due to: rebalance failed due to 'The group member needs to have a valid member id before actually entering a consumer group.' (MemberIdRequiredException)
+2025-12-27 21:23:24 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [traceId= spanId=                ] - [Consumer clientId=consumer-workout-webflux-service-1, groupId=workout-webflux-service] (Re-)joining group
+2025-12-27 21:23:27 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [traceId= spanId=                ] - [Consumer clientId=consumer-workout-webflux-service-1, groupId=workout-webflux-service] Successfully joined group with generation Generation{generationId=7, memberId='consumer-workout-webflux-service-1-115dadaa-c2a4-447c-a48e-e016f5d1b7dc', protocol='range'}
+2025-12-27 21:23:27 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [traceId= spanId=                ] - [Consumer clientId=consumer-workout-webflux-service-1, groupId=workout-webflux-service] Finished assignment for group at generation 7: {consumer-workout-webflux-service-1-115dadaa-c2a4-447c-a48e-e016f5d1b7dc=Assignment(partitions=[workout-commands-0])}
+2025-12-27 21:23:27 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [traceId= spanId=                ] - [Consumer clientId=consumer-workout-webflux-service-1, groupId=workout-webflux-service] Successfully synced group in generation Generation{generationId=7, memberId='consumer-workout-webflux-service-1-115dadaa-c2a4-447c-a48e-e016f5d1b7dc', protocol='range'}
+2025-12-27 21:23:27 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [traceId= spanId=                ] - [Consumer clientId=consumer-workout-webflux-service-1, groupId=workout-webflux-service] Notifying assignor about the new Assignment(partitions=[workout-commands-0])
+2025-12-27 21:23:27 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [traceId= spanId=                ] - [Consumer clientId=consumer-workout-webflux-service-1, groupId=workout-webflux-service] Adding newly assigned partitions: workout-commands-0
+2025-12-27 21:23:27 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [traceId= spanId=                ] - [Consumer clientId=consumer-workout-webflux-service-1, groupId=workout-webflux-service] Setting offset for partition workout-commands-0 to the committed offset FetchPosition{offset=3, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[kafka:29092 (id: 3 rack: null)], epoch=0}}
+2025-12-27 21:23:27 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.s.k.l.KafkaMessageListenerContainer - [traceId= spanId=                ] - workout-webflux-service: partitions assigned: [workout-commands-0]
+2025-12-27 21:23:29 [reactor-http-epoll-3] INFO  o.a.k.c.producer.ProducerConfig - [traceId=0ca9e9f97b326e395e6d8f85c895d27c spanId=66f3d0c0e18bfb3d] - ProducerConfig values: 
+	acks = -1
+	auto.include.jmx.reporter = true
+	batch.size = 16384
+	bootstrap.servers = [kafka:29092]
+	buffer.memory = 33554432
+	client.dns.lookup = use_all_dns_ips
+	client.id = producer-1
+	compression.type = none
+	connections.max.idle.ms = 540000
+	delivery.timeout.ms = 120000
+	enable.idempotence = true
+	interceptor.classes = []
+	key.serializer = class org.apache.kafka.common.serialization.StringSerializer
+	linger.ms = 0
+	max.block.ms = 60000
+	max.in.flight.requests.per.connection = 5
+	max.request.size = 1048576
+	metadata.max.age.ms = 300000
+	metadata.max.idle.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partitioner.adaptive.partitioning.enable = true
+	partitioner.availability.timeout.ms = 0
+	partitioner.class = null
+	partitioner.ignore.keys = false
+	receive.buffer.bytes = 32768
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 2147483647
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	transaction.timeout.ms = 60000
+	transactional.id = null
+	value.serializer = class org.apache.kafka.common.serialization.StringSerializer
+
+2025-12-27 21:23:29 [reactor-http-epoll-3] INFO  o.a.k.clients.producer.KafkaProducer - [traceId=0ca9e9f97b326e395e6d8f85c895d27c spanId=66f3d0c0e18bfb3d] - [Producer clientId=producer-1] Instantiated an idempotent producer.
+2025-12-27 21:23:29 [reactor-http-epoll-3] INFO  o.a.kafka.common.utils.AppInfoParser - [traceId=0ca9e9f97b326e395e6d8f85c895d27c spanId=66f3d0c0e18bfb3d] - Kafka version: 3.6.0
+2025-12-27 21:23:29 [reactor-http-epoll-3] INFO  o.a.kafka.common.utils.AppInfoParser - [traceId=0ca9e9f97b326e395e6d8f85c895d27c spanId=66f3d0c0e18bfb3d] - Kafka commitId: 60e845626d8a465a
+2025-12-27 21:23:29 [reactor-http-epoll-3] INFO  o.a.kafka.common.utils.AppInfoParser - [traceId=0ca9e9f97b326e395e6d8f85c895d27c spanId=66f3d0c0e18bfb3d] - Kafka startTimeMs: 1766870609563
+2025-12-27 21:23:29 [kafka-producer-network-thread | producer-1] INFO  org.apache.kafka.clients.Metadata - [traceId= spanId=                ] - [Producer clientId=producer-1] Cluster ID: EQy0TdwkRu2irAZJeb4lHw
+2025-12-27 21:23:29 [kafka-producer-network-thread | producer-1] INFO  o.a.k.c.p.i.TransactionManager - [traceId= spanId=                ] - [Producer clientId=producer-1] ProducerId set to 3 with epoch 0
+2025-12-27 21:23:29 [kafka-producer-network-thread | producer-1] INFO  c.w.app.kafka.WorkoutCommandProducer - [traceId=0ca9e9f97b326e395e6d8f85c895d27c spanId=66f3d0c0e18bfb3d] - Published create command for correlationId: 20ce1597-e86c-4692-af4c-db7191d2c1fb
+2025-12-27 21:23:29 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.admin.AdminClientConfig - [traceId= spanId=                ] - AdminClientConfig values: 
+	auto.include.jmx.reporter = true
+	bootstrap.servers = [kafka:29092]
+	client.dns.lookup = use_all_dns_ips
+	client.id = 
+	connections.max.idle.ms = 300000
+	default.api.timeout.ms = 60000
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 2147483647
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+
+2025-12-27 21:23:29 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.kafka.common.utils.AppInfoParser - [traceId= spanId=                ] - Kafka version: 3.6.0
+2025-12-27 21:23:29 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.kafka.common.utils.AppInfoParser - [traceId= spanId=                ] - Kafka commitId: 60e845626d8a465a
+2025-12-27 21:23:29 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.kafka.common.utils.AppInfoParser - [traceId= spanId=                ] - Kafka startTimeMs: 1766870609636
+2025-12-27 21:23:29 [kafka-admin-client-thread | adminclient-2] INFO  o.a.kafka.common.utils.AppInfoParser - [traceId= spanId=                ] - App info kafka.admin.client for adminclient-2 unregistered
+2025-12-27 21:23:29 [kafka-admin-client-thread | adminclient-2] INFO  o.a.kafka.common.metrics.Metrics - [traceId= spanId=                ] - Metrics scheduler closed
+2025-12-27 21:23:29 [kafka-admin-client-thread | adminclient-2] INFO  o.a.kafka.common.metrics.Metrics - [traceId= spanId=                ] - Closing reporter org.apache.kafka.common.metrics.JmxReporter
+2025-12-27 21:23:29 [kafka-admin-client-thread | adminclient-2] INFO  o.a.kafka.common.metrics.Metrics - [traceId= spanId=                ] - Metrics reporters closed
+2025-12-27 21:23:29 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  c.w.app.kafka.WorkoutCommandConsumer - [traceId=0ca9e9f97b326e395e6d8f85c895d27c spanId=74479239c8caabb5] - Received create command for correlationId: 20ce1597-e86c-4692-af4c-db7191d2c1fb
+2025-12-27 21:23:30 [reactor-tcp-epoll-1] INFO  c.workout.app.service.WorkoutService - [traceId=0ca9e9f97b326e395e6d8f85c895d27c spanId=74479239c8caabb5] - Saved workout to database with id: 4e8090bc-a7d0-426d-8cfc-ea3421d2bed0
+2025-12-27 21:32:24 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.apache.kafka.clients.NetworkClient - [traceId= spanId=                ] - [Consumer clientId=consumer-workout-webflux-service-1, groupId=workout-webflux-service] Node -1 disconnected.
+2025-12-27 21:32:29 [kafka-producer-network-thread | producer-1] INFO  o.apache.kafka.clients.NetworkClient - [traceId= spanId=                ] - [Producer clientId=producer-1] Node -1 disconnected.
+2025-12-27 22:06:15 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [traceId= spanId=                ] - [Consumer clientId=consumer-workout-webflux-service-1, groupId=workout-webflux-service] Revoke previously assigned partitions workout-commands-0
+2025-12-27 22:06:15 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.s.k.l.KafkaMessageListenerContainer - [traceId= spanId=                ] - workout-webflux-service: partitions revoked: [workout-commands-0]
+2025-12-27 22:06:15 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [traceId= spanId=                ] - [Consumer clientId=consumer-workout-webflux-service-1, groupId=workout-webflux-service] Member consumer-workout-webflux-service-1-115dadaa-c2a4-447c-a48e-e016f5d1b7dc sending LeaveGroup request to coordinator kafka:29092 (id: 2147483644 rack: null) due to the consumer unsubscribed from all topics
+2025-12-27 22:06:15 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [traceId= spanId=                ] - [Consumer clientId=consumer-workout-webflux-service-1, groupId=workout-webflux-service] Resetting generation and member id due to: consumer pro-actively leaving the group
+2025-12-27 22:06:15 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [traceId= spanId=                ] - [Consumer clientId=consumer-workout-webflux-service-1, groupId=workout-webflux-service] Request joining group due to: consumer pro-actively leaving the group
+2025-12-27 22:06:15 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.s.k.c.DefaultKafkaConsumerFactory$ExtendedKafkaConsumer - [traceId= spanId=                ] - [Consumer clientId=consumer-workout-webflux-service-1, groupId=workout-webflux-service] Unsubscribed all topics or patterns and assigned partitions
+2025-12-27 22:06:15 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [traceId= spanId=                ] - [Consumer clientId=consumer-workout-webflux-service-1, groupId=workout-webflux-service] Resetting generation and member id due to: consumer pro-actively leaving the group
+2025-12-27 22:06:15 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [traceId= spanId=                ] - [Consumer clientId=consumer-workout-webflux-service-1, groupId=workout-webflux-service] Request joining group due to: consumer pro-actively leaving the group
+2025-12-27 22:06:16 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.kafka.common.metrics.Metrics - [traceId= spanId=                ] - Metrics scheduler closed
+2025-12-27 22:06:16 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.kafka.common.metrics.Metrics - [traceId= spanId=                ] - Closing reporter org.apache.kafka.common.metrics.JmxReporter
+2025-12-27 22:06:16 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.kafka.common.metrics.Metrics - [traceId= spanId=                ] - Metrics reporters closed
+2025-12-27 22:06:16 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.kafka.common.utils.AppInfoParser - [traceId= spanId=                ] - App info kafka.consumer for consumer-workout-webflux-service-1 unregistered
+2025-12-27 22:06:16 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.s.k.l.KafkaMessageListenerContainer - [traceId= spanId=                ] - workout-webflux-service: Consumer stopped
+2025-12-27 22:06:18 [SpringApplicationShutdownHook] INFO  o.a.k.clients.producer.KafkaProducer - [traceId= spanId=                ] - [Producer clientId=producer-1] Closing the Kafka producer with timeoutMillis = 30000 ms.
+2025-12-27 22:06:18 [SpringApplicationShutdownHook] INFO  o.a.kafka.common.metrics.Metrics - [traceId= spanId=                ] - Metrics scheduler closed
+2025-12-27 22:06:18 [SpringApplicationShutdownHook] INFO  o.a.kafka.common.metrics.Metrics - [traceId= spanId=                ] - Closing reporter org.apache.kafka.common.metrics.JmxReporter
+2025-12-27 22:06:18 [SpringApplicationShutdownHook] INFO  o.a.kafka.common.metrics.Metrics - [traceId= spanId=                ] - Metrics reporters closed
+2025-12-27 22:06:18 [SpringApplicationShutdownHook] INFO  o.a.kafka.common.utils.AppInfoParser - [traceId= spanId=                ] - App info kafka.producer for producer-1 unregistered
+2025-12-27 22:08:52 [main] INFO  c.w.app.WorkoutSpringApplication - [traceId= spanId=                ] - Starting WorkoutSpringApplication v0.1.0-SNAPSHOT using Java 17.0.17 with PID 1 (/app/app.jar started by root in /app)
+2025-12-27 22:08:52 [main] INFO  c.w.app.WorkoutSpringApplication - [traceId= spanId=                ] - No active profile set, falling back to 1 default profile: "default"
+2025-12-27 22:08:53 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - [traceId= spanId=                ] - Bootstrapping Spring Data R2DBC repositories in DEFAULT mode.
+2025-12-27 22:08:53 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - [traceId= spanId=                ] - Finished Spring Data repository scanning in 146 ms. Found 1 R2DBC repository interface.
+2025-12-27 22:08:56 [main] INFO  o.s.b.a.e.web.EndpointLinksResolver - [traceId= spanId=                ] - Exposing 6 endpoint(s) beneath base path '/actuator'
+2025-12-27 22:08:56 [main] INFO  o.f.c.i.license.VersionPrinter - [traceId= spanId=                ] - Flyway Community Edition 9.22.3 by Redgate
+2025-12-27 22:08:56 [main] INFO  o.f.c.i.license.VersionPrinter - [traceId= spanId=                ] - See release notes here: https://rd.gt/416ObMi
+2025-12-27 22:08:56 [main] INFO  o.f.c.i.license.VersionPrinter - [traceId= spanId=                ] - 
+2025-12-27 22:08:56 [main] INFO  org.flywaydb.core.FlywayExecutor - [traceId= spanId=                ] - Database: jdbc:postgresql://postgres:5432/workout_db (PostgreSQL 15.15)
+2025-12-27 22:08:56 [main] INFO  o.f.core.internal.command.DbValidate - [traceId= spanId=                ] - Successfully validated 1 migration (execution time 00:00.030s)
+2025-12-27 22:08:56 [main] INFO  o.f.core.internal.command.DbMigrate - [traceId= spanId=                ] - Current version of schema "public": 1
+2025-12-27 22:08:56 [main] INFO  o.f.core.internal.command.DbMigrate - [traceId= spanId=                ] - Schema "public" is up to date. No migration necessary.
+2025-12-27 22:08:57 [main] INFO  o.a.k.c.admin.AdminClientConfig - [traceId= spanId=                ] - AdminClientConfig values: 
+	auto.include.jmx.reporter = true
+	bootstrap.servers = [kafka:29092]
+	client.dns.lookup = use_all_dns_ips
+	client.id = 
+	connections.max.idle.ms = 300000
+	default.api.timeout.ms = 60000
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 2147483647
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+
+2025-12-27 22:08:57 [main] INFO  o.a.kafka.common.utils.AppInfoParser - [traceId= spanId=                ] - Kafka version: 3.6.0
+2025-12-27 22:08:57 [main] INFO  o.a.kafka.common.utils.AppInfoParser - [traceId= spanId=                ] - Kafka commitId: 60e845626d8a465a
+2025-12-27 22:08:57 [main] INFO  o.a.kafka.common.utils.AppInfoParser - [traceId= spanId=                ] - Kafka startTimeMs: 1766873337239
+2025-12-27 22:08:57 [kafka-admin-client-thread | adminclient-1] INFO  o.a.kafka.common.utils.AppInfoParser - [traceId= spanId=                ] - App info kafka.admin.client for adminclient-1 unregistered
+2025-12-27 22:08:57 [kafka-admin-client-thread | adminclient-1] INFO  o.a.kafka.common.metrics.Metrics - [traceId= spanId=                ] - Metrics scheduler closed
+2025-12-27 22:08:57 [kafka-admin-client-thread | adminclient-1] INFO  o.a.kafka.common.metrics.Metrics - [traceId= spanId=                ] - Closing reporter org.apache.kafka.common.metrics.JmxReporter
+2025-12-27 22:08:57 [kafka-admin-client-thread | adminclient-1] INFO  o.a.kafka.common.metrics.Metrics - [traceId= spanId=                ] - Metrics reporters closed
+2025-12-27 22:08:57 [main] INFO  o.s.b.w.e.netty.NettyWebServer - [traceId= spanId=                ] - Netty started on port 8083
+2025-12-27 22:08:57 [main] INFO  o.a.k.c.consumer.ConsumerConfig - [traceId= spanId=                ] - ConsumerConfig values: 
+	allow.auto.create.topics = true
+	auto.commit.interval.ms = 5000
+	auto.include.jmx.reporter = true
+	auto.offset.reset = latest
+	bootstrap.servers = [kafka:29092]
+	check.crcs = true
+	client.dns.lookup = use_all_dns_ips
+	client.id = consumer-workout-webflux-service-1
+	client.rack = 
+	connections.max.idle.ms = 540000
+	default.api.timeout.ms = 60000
+	enable.auto.commit = false
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = workout-webflux-service
+	group.instance.id = null
+	heartbeat.interval.ms = 3000
+	interceptor.classes = []
+	internal.leave.group.on.close = true
+	internal.throw.on.fetch.stable.offset.unsupported = false
+	isolation.level = read_uncommitted
+	key.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+	max.partition.fetch.bytes = 1048576
+	max.poll.interval.ms = 300000
+	max.poll.records = 500
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor, class org.apache.kafka.clients.consumer.CooperativeStickyAssignor]
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	session.timeout.ms = 45000
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+
+2025-12-27 22:08:57 [main] INFO  o.a.kafka.common.utils.AppInfoParser - [traceId= spanId=                ] - Kafka version: 3.6.0
+2025-12-27 22:08:57 [main] INFO  o.a.kafka.common.utils.AppInfoParser - [traceId= spanId=                ] - Kafka commitId: 60e845626d8a465a
+2025-12-27 22:08:57 [main] INFO  o.a.kafka.common.utils.AppInfoParser - [traceId= spanId=                ] - Kafka startTimeMs: 1766873337752
+2025-12-27 22:08:57 [main] INFO  o.s.k.c.DefaultKafkaConsumerFactory$ExtendedKafkaConsumer - [traceId= spanId=                ] - [Consumer clientId=consumer-workout-webflux-service-1, groupId=workout-webflux-service] Subscribed to topic(s): workout-commands
+2025-12-27 22:08:57 [main] INFO  c.w.app.WorkoutSpringApplication - [traceId= spanId=                ] - Started WorkoutSpringApplication in 5.688 seconds (process running for 6.379)
+2025-12-27 22:08:57 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  org.apache.kafka.clients.Metadata - [traceId= spanId=                ] - [Consumer clientId=consumer-workout-webflux-service-1, groupId=workout-webflux-service] Cluster ID: EQy0TdwkRu2irAZJeb4lHw
+2025-12-27 22:08:57 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [traceId= spanId=                ] - [Consumer clientId=consumer-workout-webflux-service-1, groupId=workout-webflux-service] Discovered group coordinator kafka:29092 (id: 2147483644 rack: null)
+2025-12-27 22:08:57 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [traceId= spanId=                ] - [Consumer clientId=consumer-workout-webflux-service-1, groupId=workout-webflux-service] (Re-)joining group
+2025-12-27 22:08:57 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [traceId= spanId=                ] - [Consumer clientId=consumer-workout-webflux-service-1, groupId=workout-webflux-service] Request joining group due to: need to re-join with the given member-id: consumer-workout-webflux-service-1-c7ab0198-2bd3-4ad8-9a43-2836d65ea79e
+2025-12-27 22:08:57 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [traceId= spanId=                ] - [Consumer clientId=consumer-workout-webflux-service-1, groupId=workout-webflux-service] Request joining group due to: rebalance failed due to 'The group member needs to have a valid member id before actually entering a consumer group.' (MemberIdRequiredException)
+2025-12-27 22:08:57 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [traceId= spanId=                ] - [Consumer clientId=consumer-workout-webflux-service-1, groupId=workout-webflux-service] (Re-)joining group
+2025-12-27 22:09:00 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [traceId= spanId=                ] - [Consumer clientId=consumer-workout-webflux-service-1, groupId=workout-webflux-service] Successfully joined group with generation Generation{generationId=9, memberId='consumer-workout-webflux-service-1-c7ab0198-2bd3-4ad8-9a43-2836d65ea79e', protocol='range'}
+2025-12-27 22:09:00 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [traceId= spanId=                ] - [Consumer clientId=consumer-workout-webflux-service-1, groupId=workout-webflux-service] Finished assignment for group at generation 9: {consumer-workout-webflux-service-1-c7ab0198-2bd3-4ad8-9a43-2836d65ea79e=Assignment(partitions=[workout-commands-0])}
+2025-12-27 22:09:00 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [traceId= spanId=                ] - [Consumer clientId=consumer-workout-webflux-service-1, groupId=workout-webflux-service] Successfully synced group in generation Generation{generationId=9, memberId='consumer-workout-webflux-service-1-c7ab0198-2bd3-4ad8-9a43-2836d65ea79e', protocol='range'}
+2025-12-27 22:09:00 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [traceId= spanId=                ] - [Consumer clientId=consumer-workout-webflux-service-1, groupId=workout-webflux-service] Notifying assignor about the new Assignment(partitions=[workout-commands-0])
+2025-12-27 22:09:00 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [traceId= spanId=                ] - [Consumer clientId=consumer-workout-webflux-service-1, groupId=workout-webflux-service] Adding newly assigned partitions: workout-commands-0
+2025-12-27 22:09:00 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [traceId= spanId=                ] - [Consumer clientId=consumer-workout-webflux-service-1, groupId=workout-webflux-service] Setting offset for partition workout-commands-0 to the committed offset FetchPosition{offset=4, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[kafka:29092 (id: 3 rack: null)], epoch=0}}
+2025-12-27 22:09:00 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.s.k.l.KafkaMessageListenerContainer - [traceId= spanId=                ] - workout-webflux-service: partitions assigned: [workout-commands-0]
+2025-12-27 22:09:05 [reactor-http-epoll-3] INFO  o.a.k.c.producer.ProducerConfig - [traceId=f71572994488e80e2e0f490603dd4457 spanId=cb04d3704b3a2605] - ProducerConfig values: 
+	acks = -1
+	auto.include.jmx.reporter = true
+	batch.size = 16384
+	bootstrap.servers = [kafka:29092]
+	buffer.memory = 33554432
+	client.dns.lookup = use_all_dns_ips
+	client.id = producer-1
+	compression.type = none
+	connections.max.idle.ms = 540000
+	delivery.timeout.ms = 120000
+	enable.idempotence = true
+	interceptor.classes = []
+	key.serializer = class org.apache.kafka.common.serialization.StringSerializer
+	linger.ms = 0
+	max.block.ms = 60000
+	max.in.flight.requests.per.connection = 5
+	max.request.size = 1048576
+	metadata.max.age.ms = 300000
+	metadata.max.idle.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partitioner.adaptive.partitioning.enable = true
+	partitioner.availability.timeout.ms = 0
+	partitioner.class = null
+	partitioner.ignore.keys = false
+	receive.buffer.bytes = 32768
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 2147483647
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	transaction.timeout.ms = 60000
+	transactional.id = null
+	value.serializer = class org.apache.kafka.common.serialization.StringSerializer
+
+2025-12-27 22:09:05 [reactor-http-epoll-3] INFO  o.a.k.clients.producer.KafkaProducer - [traceId=f71572994488e80e2e0f490603dd4457 spanId=cb04d3704b3a2605] - [Producer clientId=producer-1] Instantiated an idempotent producer.
+2025-12-27 22:09:05 [reactor-http-epoll-3] INFO  o.a.kafka.common.utils.AppInfoParser - [traceId=f71572994488e80e2e0f490603dd4457 spanId=cb04d3704b3a2605] - Kafka version: 3.6.0
+2025-12-27 22:09:05 [reactor-http-epoll-3] INFO  o.a.kafka.common.utils.AppInfoParser - [traceId=f71572994488e80e2e0f490603dd4457 spanId=cb04d3704b3a2605] - Kafka commitId: 60e845626d8a465a
+2025-12-27 22:09:05 [reactor-http-epoll-3] INFO  o.a.kafka.common.utils.AppInfoParser - [traceId=f71572994488e80e2e0f490603dd4457 spanId=cb04d3704b3a2605] - Kafka startTimeMs: 1766873345271
+2025-12-27 22:09:05 [kafka-producer-network-thread | producer-1] INFO  org.apache.kafka.clients.Metadata - [traceId= spanId=                ] - [Producer clientId=producer-1] Cluster ID: EQy0TdwkRu2irAZJeb4lHw
+2025-12-27 22:09:05 [kafka-producer-network-thread | producer-1] INFO  o.a.k.c.p.i.TransactionManager - [traceId= spanId=                ] - [Producer clientId=producer-1] ProducerId set to 1000 with epoch 0
+2025-12-27 22:09:05 [kafka-producer-network-thread | producer-1] INFO  c.w.app.kafka.WorkoutCommandProducer - [traceId=f71572994488e80e2e0f490603dd4457 spanId=cb04d3704b3a2605] - Published create command for correlationId: 29e9d746-3204-48db-8d66-110ea8bdb521
+2025-12-27 22:09:05 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.admin.AdminClientConfig - [traceId= spanId=                ] - AdminClientConfig values: 
+	auto.include.jmx.reporter = true
+	bootstrap.servers = [kafka:29092]
+	client.dns.lookup = use_all_dns_ips
+	client.id = 
+	connections.max.idle.ms = 300000
+	default.api.timeout.ms = 60000
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 2147483647
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+
+2025-12-27 22:09:05 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.kafka.common.utils.AppInfoParser - [traceId= spanId=                ] - Kafka version: 3.6.0
+2025-12-27 22:09:05 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.kafka.common.utils.AppInfoParser - [traceId= spanId=                ] - Kafka commitId: 60e845626d8a465a
+2025-12-27 22:09:05 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.kafka.common.utils.AppInfoParser - [traceId= spanId=                ] - Kafka startTimeMs: 1766873345352
+2025-12-27 22:09:05 [kafka-admin-client-thread | adminclient-2] INFO  o.a.kafka.common.utils.AppInfoParser - [traceId= spanId=                ] - App info kafka.admin.client for adminclient-2 unregistered
+2025-12-27 22:09:05 [kafka-admin-client-thread | adminclient-2] INFO  o.a.kafka.common.metrics.Metrics - [traceId= spanId=                ] - Metrics scheduler closed
+2025-12-27 22:09:05 [kafka-admin-client-thread | adminclient-2] INFO  o.a.kafka.common.metrics.Metrics - [traceId= spanId=                ] - Closing reporter org.apache.kafka.common.metrics.JmxReporter
+2025-12-27 22:09:05 [kafka-admin-client-thread | adminclient-2] INFO  o.a.kafka.common.metrics.Metrics - [traceId= spanId=                ] - Metrics reporters closed
+2025-12-27 22:09:05 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  c.w.app.kafka.WorkoutCommandConsumer - [traceId=6b5811ad8e62c159624b9849df938369 spanId=b8baf148e2af403d] - Received create command for correlationId: 29e9d746-3204-48db-8d66-110ea8bdb521
+2025-12-27 22:09:05 [reactor-tcp-epoll-1] INFO  c.workout.app.service.WorkoutService - [traceId=6b5811ad8e62c159624b9849df938369 spanId=6ddf8ec24047e466] - Saved workout to database with id: 36dce02d-e5ab-47c7-a1d8-6a44031964cf
+2025-12-27 22:17:57 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.apache.kafka.clients.NetworkClient - [traceId= spanId=                ] - [Consumer clientId=consumer-workout-webflux-service-1, groupId=workout-webflux-service] Node -1 disconnected.
+2025-12-27 22:18:05 [kafka-producer-network-thread | producer-1] INFO  o.apache.kafka.clients.NetworkClient - [traceId= spanId=                ] - [Producer clientId=producer-1] Node -1 disconnected.
+2025-12-27 22:18:40 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [traceId= spanId=                ] - [Consumer clientId=consumer-workout-webflux-service-1, groupId=workout-webflux-service] Revoke previously assigned partitions workout-commands-0
+2025-12-27 22:18:40 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.s.k.l.KafkaMessageListenerContainer - [traceId= spanId=                ] - workout-webflux-service: partitions revoked: [workout-commands-0]
+2025-12-27 22:18:40 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [traceId= spanId=                ] - [Consumer clientId=consumer-workout-webflux-service-1, groupId=workout-webflux-service] Member consumer-workout-webflux-service-1-c7ab0198-2bd3-4ad8-9a43-2836d65ea79e sending LeaveGroup request to coordinator kafka:29092 (id: 2147483644 rack: null) due to the consumer unsubscribed from all topics
+2025-12-27 22:18:40 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [traceId= spanId=                ] - [Consumer clientId=consumer-workout-webflux-service-1, groupId=workout-webflux-service] Resetting generation and member id due to: consumer pro-actively leaving the group
+2025-12-27 22:18:40 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [traceId= spanId=                ] - [Consumer clientId=consumer-workout-webflux-service-1, groupId=workout-webflux-service] Request joining group due to: consumer pro-actively leaving the group
+2025-12-27 22:18:40 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.s.k.c.DefaultKafkaConsumerFactory$ExtendedKafkaConsumer - [traceId= spanId=                ] - [Consumer clientId=consumer-workout-webflux-service-1, groupId=workout-webflux-service] Unsubscribed all topics or patterns and assigned partitions
+2025-12-27 22:18:40 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [traceId= spanId=                ] - [Consumer clientId=consumer-workout-webflux-service-1, groupId=workout-webflux-service] Resetting generation and member id due to: consumer pro-actively leaving the group
+2025-12-27 22:18:40 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [traceId= spanId=                ] - [Consumer clientId=consumer-workout-webflux-service-1, groupId=workout-webflux-service] Request joining group due to: consumer pro-actively leaving the group
+2025-12-27 22:18:40 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.kafka.common.metrics.Metrics - [traceId= spanId=                ] - Metrics scheduler closed
+2025-12-27 22:18:40 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.kafka.common.metrics.Metrics - [traceId= spanId=                ] - Closing reporter org.apache.kafka.common.metrics.JmxReporter
+2025-12-27 22:18:40 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.kafka.common.metrics.Metrics - [traceId= spanId=                ] - Metrics reporters closed
+2025-12-27 22:18:40 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.kafka.common.utils.AppInfoParser - [traceId= spanId=                ] - App info kafka.consumer for consumer-workout-webflux-service-1 unregistered
+2025-12-27 22:18:40 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.s.k.l.KafkaMessageListenerContainer - [traceId= spanId=                ] - workout-webflux-service: Consumer stopped
+2025-12-27 22:18:42 [SpringApplicationShutdownHook] INFO  o.a.k.clients.producer.KafkaProducer - [traceId= spanId=                ] - [Producer clientId=producer-1] Closing the Kafka producer with timeoutMillis = 30000 ms.
+2025-12-27 22:18:42 [SpringApplicationShutdownHook] INFO  o.a.kafka.common.metrics.Metrics - [traceId= spanId=                ] - Metrics scheduler closed
+2025-12-27 22:18:42 [SpringApplicationShutdownHook] INFO  o.a.kafka.common.metrics.Metrics - [traceId= spanId=                ] - Closing reporter org.apache.kafka.common.metrics.JmxReporter
+2025-12-27 22:18:42 [SpringApplicationShutdownHook] INFO  o.a.kafka.common.metrics.Metrics - [traceId= spanId=                ] - Metrics reporters closed
+2025-12-27 22:18:42 [SpringApplicationShutdownHook] INFO  o.a.kafka.common.utils.AppInfoParser - [traceId= spanId=                ] - App info kafka.producer for producer-1 unregistered
+2025-12-27 22:20:38 [main] INFO  c.w.app.WorkoutSpringApplication - [traceId= spanId=                ] - Starting WorkoutSpringApplication v0.1.0-SNAPSHOT using Java 17.0.17 with PID 1 (/app/app.jar started by root in /app)
+2025-12-27 22:20:38 [main] INFO  c.w.app.WorkoutSpringApplication - [traceId= spanId=                ] - No active profile set, falling back to 1 default profile: "default"
+2025-12-27 22:20:39 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - [traceId= spanId=                ] - Bootstrapping Spring Data R2DBC repositories in DEFAULT mode.
+2025-12-27 22:20:39 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - [traceId= spanId=                ] - Finished Spring Data repository scanning in 113 ms. Found 1 R2DBC repository interface.
+2025-12-27 22:20:41 [main] INFO  o.a.k.c.consumer.ConsumerConfig - [traceId= spanId=                ] - ConsumerConfig values: 
+	allow.auto.create.topics = true
+	auto.commit.interval.ms = 5000
+	auto.include.jmx.reporter = true
+	auto.offset.reset = earliest
+	bootstrap.servers = [kafka:29092]
+	check.crcs = true
+	client.dns.lookup = use_all_dns_ips
+	client.id = consumer-null-1
+	client.rack = 
+	connections.max.idle.ms = 540000
+	default.api.timeout.ms = 60000
+	enable.auto.commit = false
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = null
+	group.instance.id = null
+	heartbeat.interval.ms = 3000
+	interceptor.classes = []
+	internal.leave.group.on.close = true
+	internal.throw.on.fetch.stable.offset.unsupported = false
+	isolation.level = read_uncommitted
+	key.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+	max.partition.fetch.bytes = 1048576
+	max.poll.interval.ms = 300000
+	max.poll.records = 500
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor, class org.apache.kafka.clients.consumer.CooperativeStickyAssignor]
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	session.timeout.ms = 45000
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+
+2025-12-27 22:20:41 [main] INFO  o.a.kafka.common.utils.AppInfoParser - [traceId= spanId=                ] - Kafka version: 3.6.0
+2025-12-27 22:20:41 [main] INFO  o.a.kafka.common.utils.AppInfoParser - [traceId= spanId=                ] - Kafka commitId: 60e845626d8a465a
+2025-12-27 22:20:41 [main] INFO  o.a.kafka.common.utils.AppInfoParser - [traceId= spanId=                ] - Kafka startTimeMs: 1766874041505
+2025-12-27 22:20:41 [reactive-kafka-null-1] ERROR r.k.r.internals.ConsumerEventLoop - [traceId= spanId=                ] - Unexpected exception
+org.apache.kafka.common.errors.InvalidGroupIdException: To use the group management or offset commit APIs, you must provide a valid group.id in the consumer configuration.
+2025-12-27 22:20:41 [reactive-kafka-null-1] ERROR r.k.r.internals.ConsumerEventLoop - [traceId= spanId=                ] - Unexpected exception
+java.lang.IllegalStateException: Consumer is not subscribed to any topics or assigned any partitions
+	at org.apache.kafka.clients.consumer.KafkaConsumer.poll(KafkaConsumer.java:1171)
+	at org.apache.kafka.clients.consumer.KafkaConsumer.poll(KafkaConsumer.java:1159)
+	at reactor.kafka.receiver.internals.ConsumerEventLoop$PollEvent.run(ConsumerEventLoop.java:366)
+	at io.micrometer.context.ContextSnapshot.lambda$wrap$0(ContextSnapshot.java:91)
+	at reactor.core.scheduler.SchedulerTask.call(SchedulerTask.java:68)
+	at reactor.core.scheduler.SchedulerTask.call(SchedulerTask.java:28)
+	at java.base/java.util.concurrent.FutureTask.run(Unknown Source)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(Unknown Source)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.base/java.lang.Thread.run(Unknown Source)
+2025-12-27 22:20:41 [reactive-kafka-null-1] ERROR reactor.core.publisher.Operators - [traceId= spanId=                ] - Operator called default onErrorDropped
+java.lang.IllegalStateException: Consumer is not subscribed to any topics or assigned any partitions
+	at org.apache.kafka.clients.consumer.KafkaConsumer.poll(KafkaConsumer.java:1171)
+	at org.apache.kafka.clients.consumer.KafkaConsumer.poll(KafkaConsumer.java:1159)
+	at reactor.kafka.receiver.internals.ConsumerEventLoop$PollEvent.run(ConsumerEventLoop.java:366)
+	at io.micrometer.context.ContextSnapshot.lambda$wrap$0(ContextSnapshot.java:91)
+	at reactor.core.scheduler.SchedulerTask.call(SchedulerTask.java:68)
+	at reactor.core.scheduler.SchedulerTask.call(SchedulerTask.java:28)
+	at java.base/java.util.concurrent.FutureTask.run(Unknown Source)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(Unknown Source)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.base/java.lang.Thread.run(Unknown Source)
+2025-12-27 22:20:41 [reactive-kafka-null-1] INFO  o.a.kafka.common.metrics.Metrics - [traceId= spanId=                ] - Metrics scheduler closed
+2025-12-27 22:20:41 [reactive-kafka-null-1] INFO  o.a.kafka.common.metrics.Metrics - [traceId= spanId=                ] - Closing reporter org.apache.kafka.common.metrics.JmxReporter
+2025-12-27 22:20:41 [reactive-kafka-null-1] INFO  o.a.kafka.common.metrics.Metrics - [traceId= spanId=                ] - Metrics reporters closed
+2025-12-27 22:20:41 [reactive-kafka-null-1] INFO  o.a.kafka.common.utils.AppInfoParser - [traceId= spanId=                ] - App info kafka.consumer for consumer-null-1 unregistered
+2025-12-27 22:20:41 [reactive-kafka-null-1] ERROR reactor.core.publisher.Operators - [traceId= spanId=                ] - Operator called default onErrorDropped
+reactor.core.Exceptions$ErrorCallbackNotImplemented: org.apache.kafka.common.errors.InvalidGroupIdException: To use the group management or offset commit APIs, you must provide a valid group.id in the consumer configuration.
+Caused by: org.apache.kafka.common.errors.InvalidGroupIdException: To use the group management or offset commit APIs, you must provide a valid group.id in the consumer configuration.
+2025-12-27 22:20:41 [main] INFO  o.s.b.a.e.web.EndpointLinksResolver - [traceId= spanId=                ] - Exposing 6 endpoint(s) beneath base path '/actuator'
+2025-12-27 22:20:42 [main] INFO  o.f.c.i.license.VersionPrinter - [traceId= spanId=                ] - Flyway Community Edition 9.22.3 by Redgate
+2025-12-27 22:20:42 [main] INFO  o.f.c.i.license.VersionPrinter - [traceId= spanId=                ] - See release notes here: https://rd.gt/416ObMi
+2025-12-27 22:20:42 [main] INFO  o.f.c.i.license.VersionPrinter - [traceId= spanId=                ] - 
+2025-12-27 22:20:42 [main] INFO  org.flywaydb.core.FlywayExecutor - [traceId= spanId=                ] - Database: jdbc:postgresql://postgres:5432/workout_db (PostgreSQL 15.15)
+2025-12-27 22:20:42 [main] INFO  o.f.core.internal.command.DbValidate - [traceId= spanId=                ] - Successfully validated 1 migration (execution time 00:00.023s)
+2025-12-27 22:20:42 [main] INFO  o.f.core.internal.command.DbMigrate - [traceId= spanId=                ] - Current version of schema "public": 1
+2025-12-27 22:20:42 [main] INFO  o.f.core.internal.command.DbMigrate - [traceId= spanId=                ] - Schema "public" is up to date. No migration necessary.
+2025-12-27 22:20:42 [main] INFO  o.a.k.c.admin.AdminClientConfig - [traceId= spanId=                ] - AdminClientConfig values: 
+	auto.include.jmx.reporter = true
+	bootstrap.servers = [kafka:29092]
+	client.dns.lookup = use_all_dns_ips
+	client.id = 
+	connections.max.idle.ms = 300000
+	default.api.timeout.ms = 60000
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 2147483647
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+
+2025-12-27 22:20:42 [main] INFO  o.a.kafka.common.utils.AppInfoParser - [traceId= spanId=                ] - Kafka version: 3.6.0
+2025-12-27 22:20:42 [main] INFO  o.a.kafka.common.utils.AppInfoParser - [traceId= spanId=                ] - Kafka commitId: 60e845626d8a465a
+2025-12-27 22:20:42 [main] INFO  o.a.kafka.common.utils.AppInfoParser - [traceId= spanId=                ] - Kafka startTimeMs: 1766874042904
+2025-12-27 22:20:43 [kafka-admin-client-thread | adminclient-1] INFO  o.a.kafka.common.utils.AppInfoParser - [traceId= spanId=                ] - App info kafka.admin.client for adminclient-1 unregistered
+2025-12-27 22:20:43 [kafka-admin-client-thread | adminclient-1] INFO  o.a.kafka.common.metrics.Metrics - [traceId= spanId=                ] - Metrics scheduler closed
+2025-12-27 22:20:43 [kafka-admin-client-thread | adminclient-1] INFO  o.a.kafka.common.metrics.Metrics - [traceId= spanId=                ] - Closing reporter org.apache.kafka.common.metrics.JmxReporter
+2025-12-27 22:20:43 [kafka-admin-client-thread | adminclient-1] INFO  o.a.kafka.common.metrics.Metrics - [traceId= spanId=                ] - Metrics reporters closed
+2025-12-27 22:20:43 [main] INFO  o.s.b.w.e.netty.NettyWebServer - [traceId= spanId=                ] - Netty started on port 8083
+2025-12-27 22:20:43 [main] INFO  c.w.app.WorkoutSpringApplication - [traceId= spanId=                ] - Started WorkoutSpringApplication in 5.353 seconds (process running for 5.832)
+2025-12-27 22:20:50 [reactor-http-epoll-2] INFO  o.a.k.c.producer.ProducerConfig - [traceId=a219b19e38a064b9697fe773cffad414 spanId=6d5507e1648bec9f] - ProducerConfig values: 
+	acks = -1
+	auto.include.jmx.reporter = true
+	batch.size = 16384
+	bootstrap.servers = [kafka:29092]
+	buffer.memory = 33554432
+	client.dns.lookup = use_all_dns_ips
+	client.id = producer-1
+	compression.type = none
+	connections.max.idle.ms = 540000
+	delivery.timeout.ms = 120000
+	enable.idempotence = true
+	interceptor.classes = []
+	key.serializer = class org.apache.kafka.common.serialization.StringSerializer
+	linger.ms = 0
+	max.block.ms = 60000
+	max.in.flight.requests.per.connection = 5
+	max.request.size = 1048576
+	metadata.max.age.ms = 300000
+	metadata.max.idle.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partitioner.adaptive.partitioning.enable = true
+	partitioner.availability.timeout.ms = 0
+	partitioner.class = null
+	partitioner.ignore.keys = false
+	receive.buffer.bytes = 32768
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 2147483647
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	transaction.timeout.ms = 60000
+	transactional.id = null
+	value.serializer = class org.apache.kafka.common.serialization.StringSerializer
+
+2025-12-27 22:20:50 [reactor-http-epoll-2] INFO  o.a.k.clients.producer.KafkaProducer - [traceId=a219b19e38a064b9697fe773cffad414 spanId=6d5507e1648bec9f] - [Producer clientId=producer-1] Instantiated an idempotent producer.
+2025-12-27 22:20:50 [reactor-http-epoll-2] INFO  o.a.kafka.common.utils.AppInfoParser - [traceId=a219b19e38a064b9697fe773cffad414 spanId=6d5507e1648bec9f] - Kafka version: 3.6.0
+2025-12-27 22:20:50 [reactor-http-epoll-2] INFO  o.a.kafka.common.utils.AppInfoParser - [traceId=a219b19e38a064b9697fe773cffad414 spanId=6d5507e1648bec9f] - Kafka commitId: 60e845626d8a465a
+2025-12-27 22:20:50 [reactor-http-epoll-2] INFO  o.a.kafka.common.utils.AppInfoParser - [traceId=a219b19e38a064b9697fe773cffad414 spanId=6d5507e1648bec9f] - Kafka startTimeMs: 1766874050878
+2025-12-27 22:20:50 [kafka-producer-network-thread | producer-1] INFO  org.apache.kafka.clients.Metadata - [traceId= spanId=                ] - [Producer clientId=producer-1] Cluster ID: EQy0TdwkRu2irAZJeb4lHw
+2025-12-27 22:20:50 [kafka-producer-network-thread | producer-1] INFO  o.a.k.c.p.i.TransactionManager - [traceId= spanId=                ] - [Producer clientId=producer-1] ProducerId set to 2000 with epoch 0
+2025-12-27 22:20:50 [reactor-kafka-sender-8312750] ERROR o.s.b.a.w.r.e.AbstractErrorWebExceptionHandler - [traceId=a219b19e38a064b9697fe773cffad414 spanId=6d5507e1648bec9f] - [88c6fad8-1]  500 Server Error for HTTP POST "/api/workouts"
+java.lang.ClassCastException: class java.util.ArrayList cannot be cast to class java.lang.String (java.util.ArrayList and java.lang.String are in module java.base of loader 'bootstrap')
+	at reactor.kafka.sender.SenderOptions.bootstrapServers(SenderOptions.java:289)
+	Suppressed: reactor.core.publisher.FluxOnAssembly$OnAssemblyException: 
+Error has been observed at the following site(s):
+	*__checkpoint ⇢ Handler com.workout.app.api.WorkoutController#createWorkout(CreateWorkoutRequest) [DispatcherHandler]
+	*__checkpoint ⇢ HTTP POST "/api/workouts" [ExceptionHandlingWebHandler]
+Original Stack Trace:
+		at reactor.kafka.sender.SenderOptions.bootstrapServers(SenderOptions.java:289)
+		at reactor.kafka.sender.internals.SendSubscriber.lambda$onNext$1(SendSubscriber.java:126)
+		at io.micrometer.observation.Observation.createNotStarted(Observation.java:172)
+		at io.micrometer.observation.docs.ObservationDocumentation.observation(ObservationDocumentation.java:188)
+		at reactor.kafka.sender.internals.SendSubscriber.onNext(SendSubscriber.java:122)
+		at reactor.kafka.sender.internals.SendSubscriber.onNext(SendSubscriber.java:43)
+		at reactor.core.publisher.FluxSubscribeOnValue$ScheduledScalar.run(FluxSubscribeOnValue.java:181)
+		at io.micrometer.context.ContextSnapshot.lambda$wrap$0(ContextSnapshot.java:91)
+		at reactor.core.scheduler.SchedulerTask.call(SchedulerTask.java:68)
+		at reactor.core.scheduler.SchedulerTask.call(SchedulerTask.java:28)
+		at java.base/java.util.concurrent.FutureTask.run(Unknown Source)
+		at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(Unknown Source)
+		at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+		at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+		at java.base/java.lang.Thread.run(Unknown Source)
+2025-12-27 22:27:02 [SpringApplicationShutdownHook] INFO  o.a.k.clients.producer.KafkaProducer - [traceId= spanId=                ] - [Producer clientId=producer-1] Closing the Kafka producer with timeoutMillis = 9223372036854775807 ms.
+2025-12-27 22:27:02 [SpringApplicationShutdownHook] INFO  o.a.kafka.common.metrics.Metrics - [traceId= spanId=                ] - Metrics scheduler closed
+2025-12-27 22:27:02 [SpringApplicationShutdownHook] INFO  o.a.kafka.common.metrics.Metrics - [traceId= spanId=                ] - Closing reporter org.apache.kafka.common.metrics.JmxReporter
+2025-12-27 22:27:02 [SpringApplicationShutdownHook] INFO  o.a.kafka.common.metrics.Metrics - [traceId= spanId=                ] - Metrics reporters closed
+2025-12-27 22:27:02 [SpringApplicationShutdownHook] INFO  o.a.kafka.common.utils.AppInfoParser - [traceId= spanId=                ] - App info kafka.producer for producer-1 unregistered
+2025-12-27 22:27:26 [main] INFO  c.w.app.WorkoutSpringApplication - [traceId= spanId=                ] - Starting WorkoutSpringApplication v0.1.0-SNAPSHOT using Java 17.0.17 with PID 1 (/app/app.jar started by root in /app)
+2025-12-27 22:27:26 [main] INFO  c.w.app.WorkoutSpringApplication - [traceId= spanId=                ] - No active profile set, falling back to 1 default profile: "default"
+2025-12-27 22:27:28 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - [traceId= spanId=                ] - Bootstrapping Spring Data R2DBC repositories in DEFAULT mode.
+2025-12-27 22:27:28 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - [traceId= spanId=                ] - Finished Spring Data repository scanning in 139 ms. Found 1 R2DBC repository interface.
+2025-12-27 22:27:30 [main] INFO  o.a.k.c.consumer.ConsumerConfig - [traceId= spanId=                ] - ConsumerConfig values: 
+	allow.auto.create.topics = true
+	auto.commit.interval.ms = 5000
+	auto.include.jmx.reporter = true
+	auto.offset.reset = earliest
+	bootstrap.servers = [kafka:29092]
+	check.crcs = true
+	client.dns.lookup = use_all_dns_ips
+	client.id = consumer-null-1
+	client.rack = 
+	connections.max.idle.ms = 540000
+	default.api.timeout.ms = 60000
+	enable.auto.commit = false
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = null
+	group.instance.id = null
+	heartbeat.interval.ms = 3000
+	interceptor.classes = []
+	internal.leave.group.on.close = true
+	internal.throw.on.fetch.stable.offset.unsupported = false
+	isolation.level = read_uncommitted
+	key.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+	max.partition.fetch.bytes = 1048576
+	max.poll.interval.ms = 300000
+	max.poll.records = 500
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor, class org.apache.kafka.clients.consumer.CooperativeStickyAssignor]
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	session.timeout.ms = 45000
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+
+2025-12-27 22:27:30 [main] INFO  o.a.kafka.common.utils.AppInfoParser - [traceId= spanId=                ] - Kafka version: 3.6.0
+2025-12-27 22:27:30 [main] INFO  o.a.kafka.common.utils.AppInfoParser - [traceId= spanId=                ] - Kafka commitId: 60e845626d8a465a
+2025-12-27 22:27:30 [main] INFO  o.a.kafka.common.utils.AppInfoParser - [traceId= spanId=                ] - Kafka startTimeMs: 1766874450474
+2025-12-27 22:27:30 [reactive-kafka-null-1] ERROR r.k.r.internals.ConsumerEventLoop - [traceId= spanId=                ] - Unexpected exception
+org.apache.kafka.common.errors.InvalidGroupIdException: To use the group management or offset commit APIs, you must provide a valid group.id in the consumer configuration.
+2025-12-27 22:27:30 [reactive-kafka-null-1] ERROR r.k.r.internals.ConsumerEventLoop - [traceId= spanId=                ] - Unexpected exception
+java.lang.IllegalStateException: Consumer is not subscribed to any topics or assigned any partitions
+	at org.apache.kafka.clients.consumer.KafkaConsumer.poll(KafkaConsumer.java:1171)
+	at org.apache.kafka.clients.consumer.KafkaConsumer.poll(KafkaConsumer.java:1159)
+	at reactor.kafka.receiver.internals.ConsumerEventLoop$PollEvent.run(ConsumerEventLoop.java:366)
+	at io.micrometer.context.ContextSnapshot.lambda$wrap$0(ContextSnapshot.java:91)
+	at reactor.core.scheduler.SchedulerTask.call(SchedulerTask.java:68)
+	at reactor.core.scheduler.SchedulerTask.call(SchedulerTask.java:28)
+	at java.base/java.util.concurrent.FutureTask.run(Unknown Source)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(Unknown Source)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.base/java.lang.Thread.run(Unknown Source)
+2025-12-27 22:27:30 [reactive-kafka-null-1] ERROR reactor.core.publisher.Operators - [traceId= spanId=                ] - Operator called default onErrorDropped
+java.lang.IllegalStateException: Consumer is not subscribed to any topics or assigned any partitions
+	at org.apache.kafka.clients.consumer.KafkaConsumer.poll(KafkaConsumer.java:1171)
+	at org.apache.kafka.clients.consumer.KafkaConsumer.poll(KafkaConsumer.java:1159)
+	at reactor.kafka.receiver.internals.ConsumerEventLoop$PollEvent.run(ConsumerEventLoop.java:366)
+	at io.micrometer.context.ContextSnapshot.lambda$wrap$0(ContextSnapshot.java:91)
+	at reactor.core.scheduler.SchedulerTask.call(SchedulerTask.java:68)
+	at reactor.core.scheduler.SchedulerTask.call(SchedulerTask.java:28)
+	at java.base/java.util.concurrent.FutureTask.run(Unknown Source)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(Unknown Source)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.base/java.lang.Thread.run(Unknown Source)
+2025-12-27 22:27:30 [reactive-kafka-null-1] INFO  o.a.kafka.common.metrics.Metrics - [traceId= spanId=                ] - Metrics scheduler closed
+2025-12-27 22:27:30 [reactive-kafka-null-1] INFO  o.a.kafka.common.metrics.Metrics - [traceId= spanId=                ] - Closing reporter org.apache.kafka.common.metrics.JmxReporter
+2025-12-27 22:27:30 [reactive-kafka-null-1] INFO  o.a.kafka.common.metrics.Metrics - [traceId= spanId=                ] - Metrics reporters closed
+2025-12-27 22:27:30 [reactive-kafka-null-1] INFO  o.a.kafka.common.utils.AppInfoParser - [traceId= spanId=                ] - App info kafka.consumer for consumer-null-1 unregistered
+2025-12-27 22:27:30 [reactive-kafka-null-1] ERROR reactor.core.publisher.Operators - [traceId= spanId=                ] - Operator called default onErrorDropped
+reactor.core.Exceptions$ErrorCallbackNotImplemented: org.apache.kafka.common.errors.InvalidGroupIdException: To use the group management or offset commit APIs, you must provide a valid group.id in the consumer configuration.
+Caused by: org.apache.kafka.common.errors.InvalidGroupIdException: To use the group management or offset commit APIs, you must provide a valid group.id in the consumer configuration.
+2025-12-27 22:27:30 [main] INFO  o.s.b.a.e.web.EndpointLinksResolver - [traceId= spanId=                ] - Exposing 6 endpoint(s) beneath base path '/actuator'
+2025-12-27 22:27:31 [main] INFO  o.f.c.i.license.VersionPrinter - [traceId= spanId=                ] - Flyway Community Edition 9.22.3 by Redgate
+2025-12-27 22:27:31 [main] INFO  o.f.c.i.license.VersionPrinter - [traceId= spanId=                ] - See release notes here: https://rd.gt/416ObMi
+2025-12-27 22:27:31 [main] INFO  o.f.c.i.license.VersionPrinter - [traceId= spanId=                ] - 
+2025-12-27 22:27:31 [main] INFO  org.flywaydb.core.FlywayExecutor - [traceId= spanId=                ] - Database: jdbc:postgresql://postgres:5432/workout_db (PostgreSQL 15.15)
+2025-12-27 22:27:31 [main] INFO  o.f.core.internal.command.DbValidate - [traceId= spanId=                ] - Successfully validated 1 migration (execution time 00:00.025s)
+2025-12-27 22:27:31 [main] INFO  o.f.core.internal.command.DbMigrate - [traceId= spanId=                ] - Current version of schema "public": 1
+2025-12-27 22:27:31 [main] INFO  o.f.core.internal.command.DbMigrate - [traceId= spanId=                ] - Schema "public" is up to date. No migration necessary.
+2025-12-27 22:27:31 [main] INFO  o.a.k.c.admin.AdminClientConfig - [traceId= spanId=                ] - AdminClientConfig values: 
+	auto.include.jmx.reporter = true
+	bootstrap.servers = [kafka:29092]
+	client.dns.lookup = use_all_dns_ips
+	client.id = 
+	connections.max.idle.ms = 300000
+	default.api.timeout.ms = 60000
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 2147483647
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+
+2025-12-27 22:27:31 [main] INFO  o.a.kafka.common.utils.AppInfoParser - [traceId= spanId=                ] - Kafka version: 3.6.0
+2025-12-27 22:27:31 [main] INFO  o.a.kafka.common.utils.AppInfoParser - [traceId= spanId=                ] - Kafka commitId: 60e845626d8a465a
+2025-12-27 22:27:31 [main] INFO  o.a.kafka.common.utils.AppInfoParser - [traceId= spanId=                ] - Kafka startTimeMs: 1766874451720
+2025-12-27 22:27:31 [kafka-admin-client-thread | adminclient-1] INFO  o.a.kafka.common.utils.AppInfoParser - [traceId= spanId=                ] - App info kafka.admin.client for adminclient-1 unregistered
+2025-12-27 22:27:31 [kafka-admin-client-thread | adminclient-1] INFO  o.a.kafka.common.metrics.Metrics - [traceId= spanId=                ] - Metrics scheduler closed
+2025-12-27 22:27:31 [kafka-admin-client-thread | adminclient-1] INFO  o.a.kafka.common.metrics.Metrics - [traceId= spanId=                ] - Closing reporter org.apache.kafka.common.metrics.JmxReporter
+2025-12-27 22:27:31 [kafka-admin-client-thread | adminclient-1] INFO  o.a.kafka.common.metrics.Metrics - [traceId= spanId=                ] - Metrics reporters closed
+2025-12-27 22:27:32 [main] INFO  o.s.b.w.e.netty.NettyWebServer - [traceId= spanId=                ] - Netty started on port 8083
+2025-12-27 22:27:32 [main] INFO  c.w.app.WorkoutSpringApplication - [traceId= spanId=                ] - Started WorkoutSpringApplication in 6.041 seconds (process running for 6.745)
+2025-12-27 22:27:44 [reactor-http-epoll-2] INFO  o.a.k.c.producer.ProducerConfig - [traceId=f6c5ef236b6f027b9588c7276722161e spanId=9cb50dd676679211] - ProducerConfig values: 
+	acks = -1
+	auto.include.jmx.reporter = true
+	batch.size = 16384
+	bootstrap.servers = [kafka:29092]
+	buffer.memory = 33554432
+	client.dns.lookup = use_all_dns_ips
+	client.id = producer-1
+	compression.type = none
+	connections.max.idle.ms = 540000
+	delivery.timeout.ms = 120000
+	enable.idempotence = true
+	interceptor.classes = []
+	key.serializer = class org.apache.kafka.common.serialization.StringSerializer
+	linger.ms = 0
+	max.block.ms = 60000
+	max.in.flight.requests.per.connection = 5
+	max.request.size = 1048576
+	metadata.max.age.ms = 300000
+	metadata.max.idle.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partitioner.adaptive.partitioning.enable = true
+	partitioner.availability.timeout.ms = 0
+	partitioner.class = null
+	partitioner.ignore.keys = false
+	receive.buffer.bytes = 32768
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 2147483647
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	transaction.timeout.ms = 60000
+	transactional.id = null
+	value.serializer = class org.apache.kafka.common.serialization.StringSerializer
+
+2025-12-27 22:27:44 [reactor-http-epoll-2] INFO  o.a.k.clients.producer.KafkaProducer - [traceId=f6c5ef236b6f027b9588c7276722161e spanId=9cb50dd676679211] - [Producer clientId=producer-1] Instantiated an idempotent producer.
+2025-12-27 22:27:44 [reactor-http-epoll-2] INFO  o.a.kafka.common.utils.AppInfoParser - [traceId=f6c5ef236b6f027b9588c7276722161e spanId=9cb50dd676679211] - Kafka version: 3.6.0
+2025-12-27 22:27:44 [reactor-http-epoll-2] INFO  o.a.kafka.common.utils.AppInfoParser - [traceId=f6c5ef236b6f027b9588c7276722161e spanId=9cb50dd676679211] - Kafka commitId: 60e845626d8a465a
+2025-12-27 22:27:44 [reactor-http-epoll-2] INFO  o.a.kafka.common.utils.AppInfoParser - [traceId=f6c5ef236b6f027b9588c7276722161e spanId=9cb50dd676679211] - Kafka startTimeMs: 1766874464158
+2025-12-27 22:27:44 [kafka-producer-network-thread | producer-1] INFO  org.apache.kafka.clients.Metadata - [traceId= spanId=                ] - [Producer clientId=producer-1] Cluster ID: EQy0TdwkRu2irAZJeb4lHw
+2025-12-27 22:27:44 [kafka-producer-network-thread | producer-1] INFO  o.a.k.c.p.i.TransactionManager - [traceId= spanId=                ] - [Producer clientId=producer-1] ProducerId set to 3000 with epoch 0
+2025-12-27 22:27:44 [kafka-producer-network-thread | producer-1] INFO  c.w.app.kafka.WorkoutCommandProducer - [traceId=f6c5ef236b6f027b9588c7276722161e spanId=9cb50dd676679211] - Published create command for correlationId: 4b3cff72-911f-43b7-acd7-52feae7e6a6e
+2025-12-27 22:33:40 [kafka-producer-network-thread | producer-1] INFO  c.w.app.kafka.WorkoutCommandProducer - [traceId=06e7fc6314ecb8a4ee25c4599aac35bc spanId=ed1751da122b22dc] - Published create command for correlationId: 74f43dac-7a23-4fb1-aa6f-42275724cd88
+2025-12-27 22:36:30 [SpringApplicationShutdownHook] INFO  o.a.k.clients.producer.KafkaProducer - [traceId= spanId=                ] - [Producer clientId=producer-1] Closing the Kafka producer with timeoutMillis = 9223372036854775807 ms.
+2025-12-27 22:36:30 [SpringApplicationShutdownHook] INFO  o.a.kafka.common.metrics.Metrics - [traceId= spanId=                ] - Metrics scheduler closed
+2025-12-27 22:36:30 [SpringApplicationShutdownHook] INFO  o.a.kafka.common.metrics.Metrics - [traceId= spanId=                ] - Closing reporter org.apache.kafka.common.metrics.JmxReporter
+2025-12-27 22:36:30 [SpringApplicationShutdownHook] INFO  o.a.kafka.common.metrics.Metrics - [traceId= spanId=                ] - Metrics reporters closed
+2025-12-27 22:36:30 [SpringApplicationShutdownHook] INFO  o.a.kafka.common.utils.AppInfoParser - [traceId= spanId=                ] - App info kafka.producer for producer-1 unregistered
+2025-12-27 22:38:33 [main] INFO  c.w.app.WorkoutSpringApplication - [traceId= spanId=                ] - Starting WorkoutSpringApplication v0.1.0-SNAPSHOT using Java 17.0.17 with PID 1 (/app/app.jar started by root in /app)
+2025-12-27 22:38:33 [main] INFO  c.w.app.WorkoutSpringApplication - [traceId= spanId=                ] - No active profile set, falling back to 1 default profile: "default"
+2025-12-27 22:38:34 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - [traceId= spanId=                ] - Bootstrapping Spring Data R2DBC repositories in DEFAULT mode.
+2025-12-27 22:38:34 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - [traceId= spanId=                ] - Finished Spring Data repository scanning in 144 ms. Found 1 R2DBC repository interface.
+2025-12-27 22:38:36 [main] INFO  c.w.app.kafka.WorkoutCommandConsumer - [traceId= spanId=                ] - Starting Kafka consumer...
+2025-12-27 22:38:36 [main] INFO  o.a.k.c.consumer.ConsumerConfig - [traceId= spanId=                ] - ConsumerConfig values: 
+	allow.auto.create.topics = true
+	auto.commit.interval.ms = 5000
+	auto.include.jmx.reporter = true
+	auto.offset.reset = earliest
+	bootstrap.servers = [kafka:29092]
+	check.crcs = true
+	client.dns.lookup = use_all_dns_ips
+	client.id = consumer-workout-webflux-service-1
+	client.rack = 
+	connections.max.idle.ms = 540000
+	default.api.timeout.ms = 60000
+	enable.auto.commit = false
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = workout-webflux-service
+	group.instance.id = null
+	heartbeat.interval.ms = 3000
+	interceptor.classes = []
+	internal.leave.group.on.close = true
+	internal.throw.on.fetch.stable.offset.unsupported = false
+	isolation.level = read_uncommitted
+	key.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+	max.partition.fetch.bytes = 1048576
+	max.poll.interval.ms = 300000
+	max.poll.records = 500
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor, class org.apache.kafka.clients.consumer.CooperativeStickyAssignor]
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	session.timeout.ms = 45000
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+
+2025-12-27 22:38:36 [main] INFO  o.a.kafka.common.utils.AppInfoParser - [traceId= spanId=                ] - Kafka version: 3.6.0
+2025-12-27 22:38:36 [main] INFO  o.a.kafka.common.utils.AppInfoParser - [traceId= spanId=                ] - Kafka commitId: 60e845626d8a465a
+2025-12-27 22:38:36 [main] INFO  o.a.kafka.common.utils.AppInfoParser - [traceId= spanId=                ] - Kafka startTimeMs: 1766875116898
+2025-12-27 22:38:36 [reactive-kafka-workout-webflux-service-1] INFO  o.a.k.clients.consumer.KafkaConsumer - [traceId= spanId=                ] - [Consumer clientId=consumer-workout-webflux-service-1, groupId=workout-webflux-service] Subscribed to topic(s): workout-commands
+2025-12-27 22:38:37 [reactive-kafka-workout-webflux-service-1] INFO  org.apache.kafka.clients.Metadata - [traceId= spanId=                ] - [Consumer clientId=consumer-workout-webflux-service-1, groupId=workout-webflux-service] Cluster ID: EQy0TdwkRu2irAZJeb4lHw
+2025-12-27 22:38:37 [reactive-kafka-workout-webflux-service-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [traceId= spanId=                ] - [Consumer clientId=consumer-workout-webflux-service-1, groupId=workout-webflux-service] Discovered group coordinator kafka:29092 (id: 2147483644 rack: null)
+2025-12-27 22:38:37 [reactive-kafka-workout-webflux-service-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [traceId= spanId=                ] - [Consumer clientId=consumer-workout-webflux-service-1, groupId=workout-webflux-service] (Re-)joining group
+2025-12-27 22:38:37 [reactive-kafka-workout-webflux-service-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [traceId= spanId=                ] - [Consumer clientId=consumer-workout-webflux-service-1, groupId=workout-webflux-service] Request joining group due to: need to re-join with the given member-id: consumer-workout-webflux-service-1-928ff4e4-d9ef-4610-88b6-44895bf14677
+2025-12-27 22:38:37 [reactive-kafka-workout-webflux-service-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [traceId= spanId=                ] - [Consumer clientId=consumer-workout-webflux-service-1, groupId=workout-webflux-service] Request joining group due to: rebalance failed due to 'The group member needs to have a valid member id before actually entering a consumer group.' (MemberIdRequiredException)
+2025-12-27 22:38:37 [reactive-kafka-workout-webflux-service-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [traceId= spanId=                ] - [Consumer clientId=consumer-workout-webflux-service-1, groupId=workout-webflux-service] (Re-)joining group
+2025-12-27 22:38:37 [main] INFO  o.s.b.a.e.web.EndpointLinksResolver - [traceId= spanId=                ] - Exposing 6 endpoint(s) beneath base path '/actuator'
+2025-12-27 22:38:38 [main] INFO  o.f.c.i.license.VersionPrinter - [traceId= spanId=                ] - Flyway Community Edition 9.22.3 by Redgate
+2025-12-27 22:38:38 [main] INFO  o.f.c.i.license.VersionPrinter - [traceId= spanId=                ] - See release notes here: https://rd.gt/416ObMi
+2025-12-27 22:38:38 [main] INFO  o.f.c.i.license.VersionPrinter - [traceId= spanId=                ] - 
+2025-12-27 22:38:38 [main] INFO  org.flywaydb.core.FlywayExecutor - [traceId= spanId=                ] - Database: jdbc:postgresql://postgres:5432/workout_db (PostgreSQL 15.15)
+2025-12-27 22:38:38 [main] INFO  o.f.core.internal.command.DbValidate - [traceId= spanId=                ] - Successfully validated 1 migration (execution time 00:00.030s)
+2025-12-27 22:38:38 [main] INFO  o.f.core.internal.command.DbMigrate - [traceId= spanId=                ] - Current version of schema "public": 1
+2025-12-27 22:38:38 [main] INFO  o.f.core.internal.command.DbMigrate - [traceId= spanId=                ] - Schema "public" is up to date. No migration necessary.
+2025-12-27 22:38:38 [main] INFO  o.a.k.c.admin.AdminClientConfig - [traceId= spanId=                ] - AdminClientConfig values: 
+	auto.include.jmx.reporter = true
+	bootstrap.servers = [kafka:29092]
+	client.dns.lookup = use_all_dns_ips
+	client.id = 
+	connections.max.idle.ms = 300000
+	default.api.timeout.ms = 60000
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 2147483647
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+
+2025-12-27 22:38:38 [main] INFO  o.a.kafka.common.utils.AppInfoParser - [traceId= spanId=                ] - Kafka version: 3.6.0
+2025-12-27 22:38:38 [main] INFO  o.a.kafka.common.utils.AppInfoParser - [traceId= spanId=                ] - Kafka commitId: 60e845626d8a465a
+2025-12-27 22:38:38 [main] INFO  o.a.kafka.common.utils.AppInfoParser - [traceId= spanId=                ] - Kafka startTimeMs: 1766875118667
+2025-12-27 22:38:38 [kafka-admin-client-thread | adminclient-1] INFO  o.a.kafka.common.utils.AppInfoParser - [traceId= spanId=                ] - App info kafka.admin.client for adminclient-1 unregistered
+2025-12-27 22:38:38 [kafka-admin-client-thread | adminclient-1] INFO  o.a.kafka.common.metrics.Metrics - [traceId= spanId=                ] - Metrics scheduler closed
+2025-12-27 22:38:38 [kafka-admin-client-thread | adminclient-1] INFO  o.a.kafka.common.metrics.Metrics - [traceId= spanId=                ] - Closing reporter org.apache.kafka.common.metrics.JmxReporter
+2025-12-27 22:38:38 [kafka-admin-client-thread | adminclient-1] INFO  o.a.kafka.common.metrics.Metrics - [traceId= spanId=                ] - Metrics reporters closed
+2025-12-27 22:38:38 [main] INFO  o.s.b.w.e.netty.NettyWebServer - [traceId= spanId=                ] - Netty started on port 8083
+2025-12-27 22:38:38 [main] INFO  c.w.app.WorkoutSpringApplication - [traceId= spanId=                ] - Started WorkoutSpringApplication in 6.126 seconds (process running for 6.751)
+2025-12-27 22:38:40 [reactive-kafka-workout-webflux-service-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [traceId= spanId=                ] - [Consumer clientId=consumer-workout-webflux-service-1, groupId=workout-webflux-service] Successfully joined group with generation Generation{generationId=11, memberId='consumer-workout-webflux-service-1-928ff4e4-d9ef-4610-88b6-44895bf14677', protocol='range'}
+2025-12-27 22:38:40 [reactive-kafka-workout-webflux-service-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [traceId= spanId=                ] - [Consumer clientId=consumer-workout-webflux-service-1, groupId=workout-webflux-service] Finished assignment for group at generation 11: {consumer-workout-webflux-service-1-928ff4e4-d9ef-4610-88b6-44895bf14677=Assignment(partitions=[workout-commands-0])}
+2025-12-27 22:38:40 [reactive-kafka-workout-webflux-service-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [traceId= spanId=                ] - [Consumer clientId=consumer-workout-webflux-service-1, groupId=workout-webflux-service] Successfully synced group in generation Generation{generationId=11, memberId='consumer-workout-webflux-service-1-928ff4e4-d9ef-4610-88b6-44895bf14677', protocol='range'}
+2025-12-27 22:38:40 [reactive-kafka-workout-webflux-service-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [traceId= spanId=                ] - [Consumer clientId=consumer-workout-webflux-service-1, groupId=workout-webflux-service] Notifying assignor about the new Assignment(partitions=[workout-commands-0])
+2025-12-27 22:38:40 [reactive-kafka-workout-webflux-service-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [traceId= spanId=                ] - [Consumer clientId=consumer-workout-webflux-service-1, groupId=workout-webflux-service] Adding newly assigned partitions: workout-commands-0
+2025-12-27 22:38:40 [reactive-kafka-workout-webflux-service-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [traceId= spanId=                ] - [Consumer clientId=consumer-workout-webflux-service-1, groupId=workout-webflux-service] Setting offset for partition workout-commands-0 to the committed offset FetchPosition{offset=5, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[kafka:29092 (id: 3 rack: null)], epoch=0}}
+2025-12-27 22:38:40 [reactive-kafka-workout-webflux-service-1] INFO  c.w.app.kafka.WorkoutCommandConsumer - [traceId= spanId=                ] - Received record from Kafka: 4b3cff72-911f-43b7-acd7-52feae7e6a6e
+2025-12-27 22:38:40 [reactive-kafka-workout-webflux-service-1] INFO  c.w.app.kafka.WorkoutCommandConsumer - [traceId= spanId=                ] - Received create command for correlationId: 4b3cff72-911f-43b7-acd7-52feae7e6a6e
+2025-12-27 22:38:40 [reactive-kafka-workout-webflux-service-1] INFO  c.w.app.kafka.WorkoutCommandConsumer - [traceId= spanId=                ] - Received record from Kafka: 74f43dac-7a23-4fb1-aa6f-42275724cd88
+2025-12-27 22:38:40 [reactive-kafka-workout-webflux-service-1] INFO  c.w.app.kafka.WorkoutCommandConsumer - [traceId= spanId=                ] - Received create command for correlationId: 74f43dac-7a23-4fb1-aa6f-42275724cd88
+2025-12-27 22:38:41 [reactor-tcp-epoll-1] INFO  c.workout.app.service.WorkoutService - [traceId= spanId=                ] - Saved workout to database with id: 140317ba-20af-4595-9aca-734d2dd218d7
+2025-12-27 22:38:41 [reactor-tcp-epoll-1] INFO  c.w.app.kafka.WorkoutCommandConsumer - [traceId= spanId=                ] - Acknowledged record: 4b3cff72-911f-43b7-acd7-52feae7e6a6e
+2025-12-27 22:38:41 [reactor-tcp-epoll-2] INFO  c.workout.app.service.WorkoutService - [traceId= spanId=                ] - Saved workout to database with id: a1dad73f-e379-498f-b301-964bb016c856
+2025-12-27 22:38:41 [reactor-tcp-epoll-2] INFO  c.w.app.kafka.WorkoutCommandConsumer - [traceId= spanId=                ] - Acknowledged record: 74f43dac-7a23-4fb1-aa6f-42275724cd88
+2025-12-27 22:39:09 [reactor-http-epoll-3] INFO  o.a.k.c.producer.ProducerConfig - [traceId=594ed37c712bde0a9268ff25e056c551 spanId=18c2fbf5f4987e71] - ProducerConfig values: 
+	acks = -1
+	auto.include.jmx.reporter = true
+	batch.size = 16384
+	bootstrap.servers = [kafka:29092]
+	buffer.memory = 33554432
+	client.dns.lookup = use_all_dns_ips
+	client.id = producer-1
+	compression.type = none
+	connections.max.idle.ms = 540000
+	delivery.timeout.ms = 120000
+	enable.idempotence = true
+	interceptor.classes = []
+	key.serializer = class org.apache.kafka.common.serialization.StringSerializer
+	linger.ms = 0
+	max.block.ms = 60000
+	max.in.flight.requests.per.connection = 5
+	max.request.size = 1048576
+	metadata.max.age.ms = 300000
+	metadata.max.idle.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partitioner.adaptive.partitioning.enable = true
+	partitioner.availability.timeout.ms = 0
+	partitioner.class = null
+	partitioner.ignore.keys = false
+	receive.buffer.bytes = 32768
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 2147483647
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	transaction.timeout.ms = 60000
+	transactional.id = null
+	value.serializer = class org.apache.kafka.common.serialization.StringSerializer
+
+2025-12-27 22:39:09 [reactor-http-epoll-3] INFO  o.a.k.clients.producer.KafkaProducer - [traceId=594ed37c712bde0a9268ff25e056c551 spanId=18c2fbf5f4987e71] - [Producer clientId=producer-1] Instantiated an idempotent producer.
+2025-12-27 22:39:09 [reactor-http-epoll-3] INFO  o.a.kafka.common.utils.AppInfoParser - [traceId=594ed37c712bde0a9268ff25e056c551 spanId=18c2fbf5f4987e71] - Kafka version: 3.6.0
+2025-12-27 22:39:09 [reactor-http-epoll-3] INFO  o.a.kafka.common.utils.AppInfoParser - [traceId=594ed37c712bde0a9268ff25e056c551 spanId=18c2fbf5f4987e71] - Kafka commitId: 60e845626d8a465a
+2025-12-27 22:39:09 [reactor-http-epoll-3] INFO  o.a.kafka.common.utils.AppInfoParser - [traceId=594ed37c712bde0a9268ff25e056c551 spanId=18c2fbf5f4987e71] - Kafka startTimeMs: 1766875149596
+2025-12-27 22:39:09 [kafka-producer-network-thread | producer-1] INFO  org.apache.kafka.clients.Metadata - [traceId= spanId=                ] - [Producer clientId=producer-1] Cluster ID: EQy0TdwkRu2irAZJeb4lHw
+2025-12-27 22:39:09 [kafka-producer-network-thread | producer-1] INFO  o.a.k.c.p.i.TransactionManager - [traceId= spanId=                ] - [Producer clientId=producer-1] ProducerId set to 4000 with epoch 0
+2025-12-27 22:39:09 [reactive-kafka-workout-webflux-service-1] INFO  c.w.app.kafka.WorkoutCommandConsumer - [traceId= spanId=                ] - Received record from Kafka: d5bed1e3-2073-426a-ab5c-62131c3ce945
+2025-12-27 22:39:09 [reactive-kafka-workout-webflux-service-1] INFO  c.w.app.kafka.WorkoutCommandConsumer - [traceId= spanId=                ] - Received create command for correlationId: d5bed1e3-2073-426a-ab5c-62131c3ce945
+2025-12-27 22:39:09 [kafka-producer-network-thread | producer-1] INFO  c.w.app.kafka.WorkoutCommandProducer - [traceId=594ed37c712bde0a9268ff25e056c551 spanId=18c2fbf5f4987e71] - Published create command for correlationId: d5bed1e3-2073-426a-ab5c-62131c3ce945
+2025-12-27 22:39:09 [reactor-tcp-epoll-10] INFO  c.workout.app.service.WorkoutService - [traceId= spanId=                ] - Saved workout to database with id: 7b4e42d2-4b7b-47e9-8235-434c15be09b9
+2025-12-27 22:39:09 [reactor-tcp-epoll-10] INFO  c.w.app.kafka.WorkoutCommandConsumer - [traceId= spanId=                ] - Acknowledged record: d5bed1e3-2073-426a-ab5c-62131c3ce945
+2025-12-27 22:44:32 [SpringApplicationShutdownHook] INFO  o.a.k.clients.producer.KafkaProducer - [traceId= spanId=                ] - [Producer clientId=producer-1] Closing the Kafka producer with timeoutMillis = 9223372036854775807 ms.
+2025-12-27 22:44:32 [SpringApplicationShutdownHook] INFO  o.a.kafka.common.metrics.Metrics - [traceId= spanId=                ] - Metrics scheduler closed
+2025-12-27 22:44:32 [SpringApplicationShutdownHook] INFO  o.a.kafka.common.metrics.Metrics - [traceId= spanId=                ] - Closing reporter org.apache.kafka.common.metrics.JmxReporter
+2025-12-27 22:44:32 [SpringApplicationShutdownHook] INFO  o.a.kafka.common.metrics.Metrics - [traceId= spanId=                ] - Metrics reporters closed
+2025-12-27 22:44:32 [SpringApplicationShutdownHook] INFO  o.a.kafka.common.utils.AppInfoParser - [traceId= spanId=                ] - App info kafka.producer for producer-1 unregistered
+2025-12-27 22:47:51 [main] INFO  c.w.app.WorkoutSpringApplication - [traceId= spanId=                ] - Starting WorkoutSpringApplication v0.1.0-SNAPSHOT using Java 17.0.17 with PID 1 (/app/app.jar started by root in /app)
+2025-12-27 22:47:51 [main] INFO  c.w.app.WorkoutSpringApplication - [traceId= spanId=                ] - No active profile set, falling back to 1 default profile: "default"
+2025-12-27 22:47:52 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - [traceId= spanId=                ] - Bootstrapping Spring Data R2DBC repositories in DEFAULT mode.
+2025-12-27 22:47:53 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - [traceId= spanId=                ] - Finished Spring Data repository scanning in 130 ms. Found 1 R2DBC repository interface.
+2025-12-27 22:47:54 [main] INFO  c.w.app.kafka.WorkoutCommandConsumer - [traceId= spanId=                ] - Starting Kafka consumer...
+2025-12-27 22:47:55 [main] INFO  o.a.k.c.consumer.ConsumerConfig - [traceId= spanId=                ] - ConsumerConfig values: 
+	allow.auto.create.topics = true
+	auto.commit.interval.ms = 5000
+	auto.include.jmx.reporter = true
+	auto.offset.reset = earliest
+	bootstrap.servers = [kafka:29092]
+	check.crcs = true
+	client.dns.lookup = use_all_dns_ips
+	client.id = consumer-workout-webflux-service-1
+	client.rack = 
+	connections.max.idle.ms = 540000
+	default.api.timeout.ms = 60000
+	enable.auto.commit = false
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = workout-webflux-service
+	group.instance.id = null
+	heartbeat.interval.ms = 3000
+	interceptor.classes = []
+	internal.leave.group.on.close = true
+	internal.throw.on.fetch.stable.offset.unsupported = false
+	isolation.level = read_uncommitted
+	key.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+	max.partition.fetch.bytes = 1048576
+	max.poll.interval.ms = 300000
+	max.poll.records = 500
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor, class org.apache.kafka.clients.consumer.CooperativeStickyAssignor]
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	session.timeout.ms = 45000
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+
+2025-12-27 22:47:55 [main] INFO  o.a.kafka.common.utils.AppInfoParser - [traceId= spanId=                ] - Kafka version: 3.6.0
+2025-12-27 22:47:55 [main] INFO  o.a.kafka.common.utils.AppInfoParser - [traceId= spanId=                ] - Kafka commitId: 60e845626d8a465a
+2025-12-27 22:47:55 [main] INFO  o.a.kafka.common.utils.AppInfoParser - [traceId= spanId=                ] - Kafka startTimeMs: 1766875675124
+2025-12-27 22:47:55 [reactive-kafka-workout-webflux-service-1] INFO  o.a.k.clients.consumer.KafkaConsumer - [traceId= spanId=                ] - [Consumer clientId=consumer-workout-webflux-service-1, groupId=workout-webflux-service] Subscribed to topic(s): workout-commands
+2025-12-27 22:47:55 [reactive-kafka-workout-webflux-service-1] INFO  org.apache.kafka.clients.Metadata - [traceId= spanId=                ] - [Consumer clientId=consumer-workout-webflux-service-1, groupId=workout-webflux-service] Cluster ID: EQy0TdwkRu2irAZJeb4lHw
+2025-12-27 22:47:55 [reactive-kafka-workout-webflux-service-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [traceId= spanId=                ] - [Consumer clientId=consumer-workout-webflux-service-1, groupId=workout-webflux-service] Discovered group coordinator kafka:29092 (id: 2147483644 rack: null)
+2025-12-27 22:47:55 [reactive-kafka-workout-webflux-service-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [traceId= spanId=                ] - [Consumer clientId=consumer-workout-webflux-service-1, groupId=workout-webflux-service] (Re-)joining group
+2025-12-27 22:47:55 [reactive-kafka-workout-webflux-service-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [traceId= spanId=                ] - [Consumer clientId=consumer-workout-webflux-service-1, groupId=workout-webflux-service] Request joining group due to: need to re-join with the given member-id: consumer-workout-webflux-service-1-b2b8cc42-b06a-449d-a4d9-74203220eb69
+2025-12-27 22:47:55 [reactive-kafka-workout-webflux-service-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [traceId= spanId=                ] - [Consumer clientId=consumer-workout-webflux-service-1, groupId=workout-webflux-service] Request joining group due to: rebalance failed due to 'The group member needs to have a valid member id before actually entering a consumer group.' (MemberIdRequiredException)
+2025-12-27 22:47:55 [reactive-kafka-workout-webflux-service-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [traceId= spanId=                ] - [Consumer clientId=consumer-workout-webflux-service-1, groupId=workout-webflux-service] (Re-)joining group
+2025-12-27 22:47:55 [main] INFO  o.s.b.a.e.web.EndpointLinksResolver - [traceId= spanId=                ] - Exposing 6 endpoint(s) beneath base path '/actuator'
+2025-12-27 22:47:56 [main] INFO  o.f.c.i.license.VersionPrinter - [traceId= spanId=                ] - Flyway Community Edition 9.22.3 by Redgate
+2025-12-27 22:47:56 [main] INFO  o.f.c.i.license.VersionPrinter - [traceId= spanId=                ] - See release notes here: https://rd.gt/416ObMi
+2025-12-27 22:47:56 [main] INFO  o.f.c.i.license.VersionPrinter - [traceId= spanId=                ] - 
+2025-12-27 22:47:56 [main] INFO  org.flywaydb.core.FlywayExecutor - [traceId= spanId=                ] - Database: jdbc:postgresql://postgres:5432/workout_db (PostgreSQL 15.15)
+2025-12-27 22:47:56 [main] INFO  o.f.core.internal.command.DbValidate - [traceId= spanId=                ] - Successfully validated 1 migration (execution time 00:00.027s)
+2025-12-27 22:47:56 [main] INFO  o.f.core.internal.command.DbMigrate - [traceId= spanId=                ] - Current version of schema "public": 1
+2025-12-27 22:47:56 [main] INFO  o.f.core.internal.command.DbMigrate - [traceId= spanId=                ] - Schema "public" is up to date. No migration necessary.
+2025-12-27 22:47:56 [main] INFO  o.a.k.c.admin.AdminClientConfig - [traceId= spanId=                ] - AdminClientConfig values: 
+	auto.include.jmx.reporter = true
+	bootstrap.servers = [kafka:29092]
+	client.dns.lookup = use_all_dns_ips
+	client.id = 
+	connections.max.idle.ms = 300000
+	default.api.timeout.ms = 60000
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 2147483647
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+
+2025-12-27 22:47:56 [main] INFO  o.a.kafka.common.utils.AppInfoParser - [traceId= spanId=                ] - Kafka version: 3.6.0
+2025-12-27 22:47:56 [main] INFO  o.a.kafka.common.utils.AppInfoParser - [traceId= spanId=                ] - Kafka commitId: 60e845626d8a465a
+2025-12-27 22:47:56 [main] INFO  o.a.kafka.common.utils.AppInfoParser - [traceId= spanId=                ] - Kafka startTimeMs: 1766875676746
+2025-12-27 22:47:56 [kafka-admin-client-thread | adminclient-1] INFO  o.a.kafka.common.utils.AppInfoParser - [traceId= spanId=                ] - App info kafka.admin.client for adminclient-1 unregistered
+2025-12-27 22:47:56 [kafka-admin-client-thread | adminclient-1] INFO  o.a.kafka.common.metrics.Metrics - [traceId= spanId=                ] - Metrics scheduler closed
+2025-12-27 22:47:56 [kafka-admin-client-thread | adminclient-1] INFO  o.a.kafka.common.metrics.Metrics - [traceId= spanId=                ] - Closing reporter org.apache.kafka.common.metrics.JmxReporter
+2025-12-27 22:47:56 [kafka-admin-client-thread | adminclient-1] INFO  o.a.kafka.common.metrics.Metrics - [traceId= spanId=                ] - Metrics reporters closed
+2025-12-27 22:47:56 [main] INFO  o.s.b.w.e.netty.NettyWebServer - [traceId= spanId=                ] - Netty started on port 8083
+2025-12-27 22:47:56 [main] INFO  c.w.app.WorkoutSpringApplication - [traceId= spanId=                ] - Started WorkoutSpringApplication in 5.837 seconds (process running for 6.499)
+2025-12-27 22:48:10 [reactor-http-epoll-3] INFO  o.a.k.c.producer.ProducerConfig - [traceId=6007f987b79164f7b2beacb79cf4916d spanId=ce247eb473c74ef1] - ProducerConfig values: 
+	acks = -1
+	auto.include.jmx.reporter = true
+	batch.size = 16384
+	bootstrap.servers = [kafka:29092]
+	buffer.memory = 33554432
+	client.dns.lookup = use_all_dns_ips
+	client.id = producer-1
+	compression.type = none
+	connections.max.idle.ms = 540000
+	delivery.timeout.ms = 120000
+	enable.idempotence = true
+	interceptor.classes = []
+	key.serializer = class org.apache.kafka.common.serialization.StringSerializer
+	linger.ms = 0
+	max.block.ms = 60000
+	max.in.flight.requests.per.connection = 5
+	max.request.size = 1048576
+	metadata.max.age.ms = 300000
+	metadata.max.idle.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partitioner.adaptive.partitioning.enable = true
+	partitioner.availability.timeout.ms = 0
+	partitioner.class = null
+	partitioner.ignore.keys = false
+	receive.buffer.bytes = 32768
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 2147483647
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	transaction.timeout.ms = 60000
+	transactional.id = null
+	value.serializer = class org.apache.kafka.common.serialization.StringSerializer
+
+2025-12-27 22:48:10 [reactor-http-epoll-3] INFO  o.a.k.clients.producer.KafkaProducer - [traceId=6007f987b79164f7b2beacb79cf4916d spanId=ce247eb473c74ef1] - [Producer clientId=producer-1] Instantiated an idempotent producer.
+2025-12-27 22:48:10 [reactor-http-epoll-3] INFO  o.a.kafka.common.utils.AppInfoParser - [traceId=6007f987b79164f7b2beacb79cf4916d spanId=ce247eb473c74ef1] - Kafka version: 3.6.0
+2025-12-27 22:48:10 [reactor-http-epoll-3] INFO  o.a.kafka.common.utils.AppInfoParser - [traceId=6007f987b79164f7b2beacb79cf4916d spanId=ce247eb473c74ef1] - Kafka commitId: 60e845626d8a465a
+2025-12-27 22:48:10 [reactor-http-epoll-3] INFO  o.a.kafka.common.utils.AppInfoParser - [traceId=6007f987b79164f7b2beacb79cf4916d spanId=ce247eb473c74ef1] - Kafka startTimeMs: 1766875690768
+2025-12-27 22:48:10 [kafka-producer-network-thread | producer-1] INFO  org.apache.kafka.clients.Metadata - [traceId= spanId=                ] - [Producer clientId=producer-1] Cluster ID: EQy0TdwkRu2irAZJeb4lHw
+2025-12-27 22:48:10 [kafka-producer-network-thread | producer-1] INFO  o.a.k.c.p.i.TransactionManager - [traceId= spanId=                ] - [Producer clientId=producer-1] ProducerId set to 5000 with epoch 0
+2025-12-27 22:48:10 [kafka-producer-network-thread | producer-1] INFO  c.w.app.kafka.WorkoutCommandProducer - [traceId=6007f987b79164f7b2beacb79cf4916d spanId=ce247eb473c74ef1] - Published create command for correlationId: aa25d0e7-b44a-4bf8-b8db-cd87ceb35699
+2025-12-27 22:48:16 [reactive-kafka-workout-webflux-service-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [traceId= spanId=                ] - [Consumer clientId=consumer-workout-webflux-service-1, groupId=workout-webflux-service] Successfully joined group with generation Generation{generationId=12, memberId='consumer-workout-webflux-service-1-b2b8cc42-b06a-449d-a4d9-74203220eb69', protocol='range'}
+2025-12-27 22:48:16 [reactive-kafka-workout-webflux-service-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [traceId= spanId=                ] - [Consumer clientId=consumer-workout-webflux-service-1, groupId=workout-webflux-service] Finished assignment for group at generation 12: {consumer-workout-webflux-service-1-b2b8cc42-b06a-449d-a4d9-74203220eb69=Assignment(partitions=[workout-commands-0])}
+2025-12-27 22:48:16 [reactive-kafka-workout-webflux-service-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [traceId= spanId=                ] - [Consumer clientId=consumer-workout-webflux-service-1, groupId=workout-webflux-service] Successfully synced group in generation Generation{generationId=12, memberId='consumer-workout-webflux-service-1-b2b8cc42-b06a-449d-a4d9-74203220eb69', protocol='range'}
+2025-12-27 22:48:16 [reactive-kafka-workout-webflux-service-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [traceId= spanId=                ] - [Consumer clientId=consumer-workout-webflux-service-1, groupId=workout-webflux-service] Notifying assignor about the new Assignment(partitions=[workout-commands-0])
+2025-12-27 22:48:16 [reactive-kafka-workout-webflux-service-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [traceId= spanId=                ] - [Consumer clientId=consumer-workout-webflux-service-1, groupId=workout-webflux-service] Adding newly assigned partitions: workout-commands-0
+2025-12-27 22:48:16 [reactive-kafka-workout-webflux-service-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [traceId= spanId=                ] - [Consumer clientId=consumer-workout-webflux-service-1, groupId=workout-webflux-service] Setting offset for partition workout-commands-0 to the committed offset FetchPosition{offset=8, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[kafka:29092 (id: 3 rack: null)], epoch=0}}
+2025-12-27 22:48:17 [reactive-kafka-workout-webflux-service-1] INFO  c.w.app.kafka.WorkoutCommandConsumer - [traceId=eafe9277344e6b6890c448928e761854 spanId=b28f612294e50450] - Processing workout creation for correlationId: aa25d0e7-b44a-4bf8-b8db-cd87ceb35699
+2025-12-27 22:48:17 [reactor-tcp-epoll-10] INFO  c.workout.app.service.WorkoutService - [traceId=eafe9277344e6b6890c448928e761854 spanId=b28f612294e50450] - Saved workout to database with id: a0a9db63-59fa-4936-a464-1c9efc886db2
+2025-12-27 22:48:17 [reactor-tcp-epoll-10] INFO  c.w.app.kafka.WorkoutCommandConsumer - [traceId=eafe9277344e6b6890c448928e761854 spanId=b28f612294e50450] - Successfully processed and acknowledged record
+2025-12-27 22:56:07 [SpringApplicationShutdownHook] INFO  o.a.k.clients.producer.KafkaProducer - [traceId= spanId=                ] - [Producer clientId=producer-1] Closing the Kafka producer with timeoutMillis = 9223372036854775807 ms.
+2025-12-27 22:56:07 [SpringApplicationShutdownHook] INFO  o.a.kafka.common.metrics.Metrics - [traceId= spanId=                ] - Metrics scheduler closed
+2025-12-27 22:56:07 [SpringApplicationShutdownHook] INFO  o.a.kafka.common.metrics.Metrics - [traceId= spanId=                ] - Closing reporter org.apache.kafka.common.metrics.JmxReporter
+2025-12-27 22:56:07 [SpringApplicationShutdownHook] INFO  o.a.kafka.common.metrics.Metrics - [traceId= spanId=                ] - Metrics reporters closed
+2025-12-27 22:56:07 [SpringApplicationShutdownHook] INFO  o.a.kafka.common.utils.AppInfoParser - [traceId= spanId=                ] - App info kafka.producer for producer-1 unregistered
+2025-12-27 22:56:31 [main] INFO  c.w.app.WorkoutSpringApplication - [traceId= spanId=                ] - Starting WorkoutSpringApplication v0.1.0-SNAPSHOT using Java 17.0.17 with PID 1 (/app/app.jar started by root in /app)
+2025-12-27 22:56:31 [main] INFO  c.w.app.WorkoutSpringApplication - [traceId= spanId=                ] - No active profile set, falling back to 1 default profile: "default"
+2025-12-27 22:56:33 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - [traceId= spanId=                ] - Bootstrapping Spring Data R2DBC repositories in DEFAULT mode.
+2025-12-27 22:56:33 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - [traceId= spanId=                ] - Finished Spring Data repository scanning in 158 ms. Found 1 R2DBC repository interface.
+2025-12-27 22:56:35 [main] INFO  c.w.app.kafka.WorkoutCommandConsumer - [traceId= spanId=                ] - Starting Kafka consumer...
+2025-12-27 22:56:35 [main] INFO  o.a.k.c.consumer.ConsumerConfig - [traceId= spanId=                ] - ConsumerConfig values: 
+	allow.auto.create.topics = true
+	auto.commit.interval.ms = 5000
+	auto.include.jmx.reporter = true
+	auto.offset.reset = earliest
+	bootstrap.servers = [kafka:29092]
+	check.crcs = true
+	client.dns.lookup = use_all_dns_ips
+	client.id = consumer-workout-webflux-service-1
+	client.rack = 
+	connections.max.idle.ms = 540000
+	default.api.timeout.ms = 60000
+	enable.auto.commit = false
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = workout-webflux-service
+	group.instance.id = null
+	heartbeat.interval.ms = 3000
+	interceptor.classes = []
+	internal.leave.group.on.close = true
+	internal.throw.on.fetch.stable.offset.unsupported = false
+	isolation.level = read_uncommitted
+	key.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+	max.partition.fetch.bytes = 1048576
+	max.poll.interval.ms = 300000
+	max.poll.records = 500
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor, class org.apache.kafka.clients.consumer.CooperativeStickyAssignor]
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	session.timeout.ms = 45000
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+
+2025-12-27 22:56:35 [main] INFO  o.a.kafka.common.utils.AppInfoParser - [traceId= spanId=                ] - Kafka version: 3.6.0
+2025-12-27 22:56:35 [main] INFO  o.a.kafka.common.utils.AppInfoParser - [traceId= spanId=                ] - Kafka commitId: 60e845626d8a465a
+2025-12-27 22:56:35 [main] INFO  o.a.kafka.common.utils.AppInfoParser - [traceId= spanId=                ] - Kafka startTimeMs: 1766876195320
+2025-12-27 22:56:35 [reactive-kafka-workout-webflux-service-1] INFO  o.a.k.clients.consumer.KafkaConsumer - [traceId= spanId=                ] - [Consumer clientId=consumer-workout-webflux-service-1, groupId=workout-webflux-service] Subscribed to topic(s): workout-commands
+2025-12-27 22:56:35 [reactive-kafka-workout-webflux-service-1] INFO  org.apache.kafka.clients.Metadata - [traceId= spanId=                ] - [Consumer clientId=consumer-workout-webflux-service-1, groupId=workout-webflux-service] Cluster ID: EQy0TdwkRu2irAZJeb4lHw
+2025-12-27 22:56:35 [reactive-kafka-workout-webflux-service-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [traceId= spanId=                ] - [Consumer clientId=consumer-workout-webflux-service-1, groupId=workout-webflux-service] Discovered group coordinator kafka:29092 (id: 2147483644 rack: null)
+2025-12-27 22:56:35 [reactive-kafka-workout-webflux-service-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [traceId= spanId=                ] - [Consumer clientId=consumer-workout-webflux-service-1, groupId=workout-webflux-service] (Re-)joining group
+2025-12-27 22:56:36 [reactive-kafka-workout-webflux-service-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [traceId= spanId=                ] - [Consumer clientId=consumer-workout-webflux-service-1, groupId=workout-webflux-service] Request joining group due to: need to re-join with the given member-id: consumer-workout-webflux-service-1-5375c6bf-fa9d-41d7-ad16-bcf31771cb2b
+2025-12-27 22:56:36 [reactive-kafka-workout-webflux-service-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [traceId= spanId=                ] - [Consumer clientId=consumer-workout-webflux-service-1, groupId=workout-webflux-service] Request joining group due to: rebalance failed due to 'The group member needs to have a valid member id before actually entering a consumer group.' (MemberIdRequiredException)
+2025-12-27 22:56:36 [reactive-kafka-workout-webflux-service-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [traceId= spanId=                ] - [Consumer clientId=consumer-workout-webflux-service-1, groupId=workout-webflux-service] (Re-)joining group
+2025-12-27 22:56:36 [main] INFO  o.s.b.a.e.web.EndpointLinksResolver - [traceId= spanId=                ] - Exposing 6 endpoint(s) beneath base path '/actuator'
+2025-12-27 22:56:36 [main] INFO  o.f.c.i.license.VersionPrinter - [traceId= spanId=                ] - Flyway Community Edition 9.22.3 by Redgate
+2025-12-27 22:56:36 [main] INFO  o.f.c.i.license.VersionPrinter - [traceId= spanId=                ] - See release notes here: https://rd.gt/416ObMi
+2025-12-27 22:56:36 [main] INFO  o.f.c.i.license.VersionPrinter - [traceId= spanId=                ] - 
+2025-12-27 22:56:36 [main] INFO  org.flywaydb.core.FlywayExecutor - [traceId= spanId=                ] - Database: jdbc:postgresql://postgres:5432/workout_db (PostgreSQL 15.15)
+2025-12-27 22:56:36 [main] INFO  o.f.core.internal.command.DbValidate - [traceId= spanId=                ] - Successfully validated 1 migration (execution time 00:00.033s)
+2025-12-27 22:56:36 [main] INFO  o.f.core.internal.command.DbMigrate - [traceId= spanId=                ] - Current version of schema "public": 1
+2025-12-27 22:56:36 [main] INFO  o.f.core.internal.command.DbMigrate - [traceId= spanId=                ] - Schema "public" is up to date. No migration necessary.
+2025-12-27 22:56:36 [main] INFO  o.a.k.c.admin.AdminClientConfig - [traceId= spanId=                ] - AdminClientConfig values: 
+	auto.include.jmx.reporter = true
+	bootstrap.servers = [kafka:29092]
+	client.dns.lookup = use_all_dns_ips
+	client.id = 
+	connections.max.idle.ms = 300000
+	default.api.timeout.ms = 60000
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 2147483647
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+
+2025-12-27 22:56:37 [main] INFO  o.a.kafka.common.utils.AppInfoParser - [traceId= spanId=                ] - Kafka version: 3.6.0
+2025-12-27 22:56:37 [main] INFO  o.a.kafka.common.utils.AppInfoParser - [traceId= spanId=                ] - Kafka commitId: 60e845626d8a465a
+2025-12-27 22:56:37 [main] INFO  o.a.kafka.common.utils.AppInfoParser - [traceId= spanId=                ] - Kafka startTimeMs: 1766876197026
+2025-12-27 22:56:37 [kafka-admin-client-thread | adminclient-1] INFO  o.a.kafka.common.utils.AppInfoParser - [traceId= spanId=                ] - App info kafka.admin.client for adminclient-1 unregistered
+2025-12-27 22:56:37 [kafka-admin-client-thread | adminclient-1] INFO  o.a.kafka.common.metrics.Metrics - [traceId= spanId=                ] - Metrics scheduler closed
+2025-12-27 22:56:37 [kafka-admin-client-thread | adminclient-1] INFO  o.a.kafka.common.metrics.Metrics - [traceId= spanId=                ] - Closing reporter org.apache.kafka.common.metrics.JmxReporter
+2025-12-27 22:56:37 [kafka-admin-client-thread | adminclient-1] INFO  o.a.kafka.common.metrics.Metrics - [traceId= spanId=                ] - Metrics reporters closed
+2025-12-27 22:56:37 [main] INFO  o.s.b.w.e.netty.NettyWebServer - [traceId= spanId=                ] - Netty started on port 8083
+2025-12-27 22:56:37 [main] INFO  c.w.app.WorkoutSpringApplication - [traceId= spanId=                ] - Started WorkoutSpringApplication in 6.355 seconds (process running for 6.983)
+2025-12-27 22:56:45 [reactor-http-epoll-3] INFO  o.a.k.c.producer.ProducerConfig - [traceId=ab2df2598bf3cbbf2811f3a173662b4a spanId=ad2beb459c1505da] - ProducerConfig values: 
+	acks = -1
+	auto.include.jmx.reporter = true
+	batch.size = 16384
+	bootstrap.servers = [kafka:29092]
+	buffer.memory = 33554432
+	client.dns.lookup = use_all_dns_ips
+	client.id = producer-1
+	compression.type = none
+	connections.max.idle.ms = 540000
+	delivery.timeout.ms = 120000
+	enable.idempotence = true
+	interceptor.classes = []
+	key.serializer = class org.apache.kafka.common.serialization.StringSerializer
+	linger.ms = 0
+	max.block.ms = 60000
+	max.in.flight.requests.per.connection = 5
+	max.request.size = 1048576
+	metadata.max.age.ms = 300000
+	metadata.max.idle.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partitioner.adaptive.partitioning.enable = true
+	partitioner.availability.timeout.ms = 0
+	partitioner.class = null
+	partitioner.ignore.keys = false
+	receive.buffer.bytes = 32768
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 2147483647
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	transaction.timeout.ms = 60000
+	transactional.id = null
+	value.serializer = class org.apache.kafka.common.serialization.StringSerializer
+
+2025-12-27 22:56:45 [reactor-http-epoll-3] INFO  o.a.k.clients.producer.KafkaProducer - [traceId=ab2df2598bf3cbbf2811f3a173662b4a spanId=ad2beb459c1505da] - [Producer clientId=producer-1] Instantiated an idempotent producer.
+2025-12-27 22:56:45 [reactor-http-epoll-3] INFO  o.a.kafka.common.utils.AppInfoParser - [traceId=ab2df2598bf3cbbf2811f3a173662b4a spanId=ad2beb459c1505da] - Kafka version: 3.6.0
+2025-12-27 22:56:45 [reactor-http-epoll-3] INFO  o.a.kafka.common.utils.AppInfoParser - [traceId=ab2df2598bf3cbbf2811f3a173662b4a spanId=ad2beb459c1505da] - Kafka commitId: 60e845626d8a465a
+2025-12-27 22:56:45 [reactor-http-epoll-3] INFO  o.a.kafka.common.utils.AppInfoParser - [traceId=ab2df2598bf3cbbf2811f3a173662b4a spanId=ad2beb459c1505da] - Kafka startTimeMs: 1766876205061
+2025-12-27 22:56:45 [kafka-producer-network-thread | producer-1] INFO  org.apache.kafka.clients.Metadata - [traceId= spanId=                ] - [Producer clientId=producer-1] Cluster ID: EQy0TdwkRu2irAZJeb4lHw
+2025-12-27 22:56:45 [kafka-producer-network-thread | producer-1] INFO  o.a.k.c.p.i.TransactionManager - [traceId= spanId=                ] - [Producer clientId=producer-1] ProducerId set to 6000 with epoch 0
+2025-12-27 22:56:45 [kafka-producer-network-thread | producer-1] INFO  c.w.app.kafka.WorkoutCommandProducer - [traceId=ab2df2598bf3cbbf2811f3a173662b4a spanId=ad2beb459c1505da] - Published create command for correlationId: c56d929d-af33-4857-9f79-0a46f9665144
+2025-12-27 22:57:09 [reactive-kafka-workout-webflux-service-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [traceId= spanId=                ] - [Consumer clientId=consumer-workout-webflux-service-1, groupId=workout-webflux-service] Successfully joined group with generation Generation{generationId=13, memberId='consumer-workout-webflux-service-1-5375c6bf-fa9d-41d7-ad16-bcf31771cb2b', protocol='range'}
+2025-12-27 22:57:09 [reactive-kafka-workout-webflux-service-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [traceId= spanId=                ] - [Consumer clientId=consumer-workout-webflux-service-1, groupId=workout-webflux-service] Finished assignment for group at generation 13: {consumer-workout-webflux-service-1-5375c6bf-fa9d-41d7-ad16-bcf31771cb2b=Assignment(partitions=[workout-commands-0])}
+2025-12-27 22:57:10 [reactive-kafka-workout-webflux-service-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [traceId= spanId=                ] - [Consumer clientId=consumer-workout-webflux-service-1, groupId=workout-webflux-service] Successfully synced group in generation Generation{generationId=13, memberId='consumer-workout-webflux-service-1-5375c6bf-fa9d-41d7-ad16-bcf31771cb2b', protocol='range'}
+2025-12-27 22:57:10 [reactive-kafka-workout-webflux-service-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [traceId= spanId=                ] - [Consumer clientId=consumer-workout-webflux-service-1, groupId=workout-webflux-service] Notifying assignor about the new Assignment(partitions=[workout-commands-0])
+2025-12-27 22:57:10 [reactive-kafka-workout-webflux-service-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [traceId= spanId=                ] - [Consumer clientId=consumer-workout-webflux-service-1, groupId=workout-webflux-service] Adding newly assigned partitions: workout-commands-0
+2025-12-27 22:57:10 [reactive-kafka-workout-webflux-service-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [traceId= spanId=                ] - [Consumer clientId=consumer-workout-webflux-service-1, groupId=workout-webflux-service] Setting offset for partition workout-commands-0 to the committed offset FetchPosition{offset=9, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[kafka:29092 (id: 3 rack: null)], epoch=0}}
+2025-12-27 22:57:10 [reactive-kafka-workout-webflux-service-1] DEBUG c.w.app.kafka.WorkoutCommandConsumer - [traceId= spanId=                ] - Received record with headers: , traceparent=00-ab2df2598bf3cbbf2811f3a173662b4a-10a2da23fb2136cc-01
+2025-12-27 22:57:10 [reactive-kafka-workout-webflux-service-1] INFO  c.w.app.kafka.WorkoutCommandConsumer - [traceId=8a66e26bd50c1f6163cea9372435ce6f spanId=cc9801d53f99dab9] - Processing workout creation for correlationId: c56d929d-af33-4857-9f79-0a46f9665144
+2025-12-27 22:57:10 [reactor-tcp-epoll-1] INFO  c.workout.app.service.WorkoutService - [traceId=8a66e26bd50c1f6163cea9372435ce6f spanId=cc9801d53f99dab9] - Saved workout to database with id: 6c8380c0-9a31-4abe-9fb8-6b72f1491550
+2025-12-27 22:57:10 [reactor-tcp-epoll-1] INFO  c.w.app.kafka.WorkoutCommandConsumer - [traceId=8a66e26bd50c1f6163cea9372435ce6f spanId=cc9801d53f99dab9] - Successfully processed and acknowledged record
+2025-12-27 23:03:57 [SpringApplicationShutdownHook] INFO  o.a.k.clients.producer.KafkaProducer - [traceId= spanId=                ] - [Producer clientId=producer-1] Closing the Kafka producer with timeoutMillis = 9223372036854775807 ms.
+2025-12-27 23:03:57 [SpringApplicationShutdownHook] INFO  o.a.kafka.common.metrics.Metrics - [traceId= spanId=                ] - Metrics scheduler closed
+2025-12-27 23:03:57 [SpringApplicationShutdownHook] INFO  o.a.kafka.common.metrics.Metrics - [traceId= spanId=                ] - Closing reporter org.apache.kafka.common.metrics.JmxReporter
+2025-12-27 23:03:57 [SpringApplicationShutdownHook] INFO  o.a.kafka.common.metrics.Metrics - [traceId= spanId=                ] - Metrics reporters closed
+2025-12-27 23:03:57 [SpringApplicationShutdownHook] INFO  o.a.kafka.common.utils.AppInfoParser - [traceId= spanId=                ] - App info kafka.producer for producer-1 unregistered
+2025-12-27 23:21:29 [main] INFO  c.w.app.WorkoutSpringApplication - [traceId= spanId=                ] - Starting WorkoutSpringApplication v0.1.0-SNAPSHOT using Java 17.0.17 with PID 1 (/app/app.jar started by root in /app)
+2025-12-27 23:21:29 [main] INFO  c.w.app.WorkoutSpringApplication - [traceId= spanId=                ] - No active profile set, falling back to 1 default profile: "default"
+2025-12-27 23:21:30 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - [traceId= spanId=                ] - Bootstrapping Spring Data R2DBC repositories in DEFAULT mode.
+2025-12-27 23:21:30 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - [traceId= spanId=                ] - Finished Spring Data repository scanning in 118 ms. Found 1 R2DBC repository interface.
+2025-12-27 23:21:32 [main] INFO  c.w.app.kafka.WorkoutCommandConsumer - [traceId= spanId=                ] - Starting Kafka consumer...
+2025-12-27 23:21:32 [main] INFO  o.a.k.c.consumer.ConsumerConfig - [traceId= spanId=                ] - ConsumerConfig values: 
+	allow.auto.create.topics = true
+	auto.commit.interval.ms = 5000
+	auto.include.jmx.reporter = true
+	auto.offset.reset = earliest
+	bootstrap.servers = [kafka:29092]
+	check.crcs = true
+	client.dns.lookup = use_all_dns_ips
+	client.id = consumer-workout-webflux-service-1
+	client.rack = 
+	connections.max.idle.ms = 540000
+	default.api.timeout.ms = 60000
+	enable.auto.commit = false
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = workout-webflux-service
+	group.instance.id = null
+	heartbeat.interval.ms = 3000
+	interceptor.classes = []
+	internal.leave.group.on.close = true
+	internal.throw.on.fetch.stable.offset.unsupported = false
+	isolation.level = read_uncommitted
+	key.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+	max.partition.fetch.bytes = 1048576
+	max.poll.interval.ms = 300000
+	max.poll.records = 500
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor, class org.apache.kafka.clients.consumer.CooperativeStickyAssignor]
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	session.timeout.ms = 45000
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+
+2025-12-27 23:21:32 [main] INFO  o.a.kafka.common.utils.AppInfoParser - [traceId= spanId=                ] - Kafka version: 3.6.0
+2025-12-27 23:21:32 [main] INFO  o.a.kafka.common.utils.AppInfoParser - [traceId= spanId=                ] - Kafka commitId: 60e845626d8a465a
+2025-12-27 23:21:32 [main] INFO  o.a.kafka.common.utils.AppInfoParser - [traceId= spanId=                ] - Kafka startTimeMs: 1766877692469
+2025-12-27 23:21:32 [reactive-kafka-workout-webflux-service-1] INFO  o.a.k.clients.consumer.KafkaConsumer - [traceId= spanId=                ] - [Consumer clientId=consumer-workout-webflux-service-1, groupId=workout-webflux-service] Subscribed to topic(s): workout-commands
+2025-12-27 23:21:33 [reactive-kafka-workout-webflux-service-1] INFO  org.apache.kafka.clients.Metadata - [traceId= spanId=                ] - [Consumer clientId=consumer-workout-webflux-service-1, groupId=workout-webflux-service] Cluster ID: EQy0TdwkRu2irAZJeb4lHw
+2025-12-27 23:21:33 [reactive-kafka-workout-webflux-service-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [traceId= spanId=                ] - [Consumer clientId=consumer-workout-webflux-service-1, groupId=workout-webflux-service] Discovered group coordinator kafka:29092 (id: 2147483644 rack: null)
+2025-12-27 23:21:33 [reactive-kafka-workout-webflux-service-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [traceId= spanId=                ] - [Consumer clientId=consumer-workout-webflux-service-1, groupId=workout-webflux-service] (Re-)joining group
+2025-12-27 23:21:33 [reactive-kafka-workout-webflux-service-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [traceId= spanId=                ] - [Consumer clientId=consumer-workout-webflux-service-1, groupId=workout-webflux-service] Request joining group due to: need to re-join with the given member-id: consumer-workout-webflux-service-1-fbb03f05-a911-4d85-b80a-2434cd96d8da
+2025-12-27 23:21:33 [reactive-kafka-workout-webflux-service-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [traceId= spanId=                ] - [Consumer clientId=consumer-workout-webflux-service-1, groupId=workout-webflux-service] Request joining group due to: rebalance failed due to 'The group member needs to have a valid member id before actually entering a consumer group.' (MemberIdRequiredException)
+2025-12-27 23:21:33 [reactive-kafka-workout-webflux-service-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [traceId= spanId=                ] - [Consumer clientId=consumer-workout-webflux-service-1, groupId=workout-webflux-service] (Re-)joining group
+2025-12-27 23:21:33 [main] INFO  o.s.b.a.e.web.EndpointLinksResolver - [traceId= spanId=                ] - Exposing 6 endpoint(s) beneath base path '/actuator'
+2025-12-27 23:21:33 [main] INFO  o.f.c.i.license.VersionPrinter - [traceId= spanId=                ] - Flyway Community Edition 9.22.3 by Redgate
+2025-12-27 23:21:33 [main] INFO  o.f.c.i.license.VersionPrinter - [traceId= spanId=                ] - See release notes here: https://rd.gt/416ObMi
+2025-12-27 23:21:33 [main] INFO  o.f.c.i.license.VersionPrinter - [traceId= spanId=                ] - 
+2025-12-27 23:21:33 [main] INFO  org.flywaydb.core.FlywayExecutor - [traceId= spanId=                ] - Database: jdbc:postgresql://postgres:5432/workout_db (PostgreSQL 15.15)
+2025-12-27 23:21:33 [main] INFO  o.f.core.internal.command.DbValidate - [traceId= spanId=                ] - Successfully validated 1 migration (execution time 00:00.023s)
+2025-12-27 23:21:33 [main] INFO  o.f.core.internal.command.DbMigrate - [traceId= spanId=                ] - Current version of schema "public": 1
+2025-12-27 23:21:33 [main] INFO  o.f.core.internal.command.DbMigrate - [traceId= spanId=                ] - Schema "public" is up to date. No migration necessary.
+2025-12-27 23:21:34 [main] INFO  o.a.k.c.admin.AdminClientConfig - [traceId= spanId=                ] - AdminClientConfig values: 
+	auto.include.jmx.reporter = true
+	bootstrap.servers = [kafka:29092]
+	client.dns.lookup = use_all_dns_ips
+	client.id = 
+	connections.max.idle.ms = 300000
+	default.api.timeout.ms = 60000
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 2147483647
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+
+2025-12-27 23:21:34 [main] INFO  o.a.kafka.common.utils.AppInfoParser - [traceId= spanId=                ] - Kafka version: 3.6.0
+2025-12-27 23:21:34 [main] INFO  o.a.kafka.common.utils.AppInfoParser - [traceId= spanId=                ] - Kafka commitId: 60e845626d8a465a
+2025-12-27 23:21:34 [main] INFO  o.a.kafka.common.utils.AppInfoParser - [traceId= spanId=                ] - Kafka startTimeMs: 1766877694158
+2025-12-27 23:21:34 [kafka-admin-client-thread | adminclient-1] INFO  o.a.kafka.common.utils.AppInfoParser - [traceId= spanId=                ] - App info kafka.admin.client for adminclient-1 unregistered
+2025-12-27 23:21:34 [kafka-admin-client-thread | adminclient-1] INFO  o.a.kafka.common.metrics.Metrics - [traceId= spanId=                ] - Metrics scheduler closed
+2025-12-27 23:21:34 [kafka-admin-client-thread | adminclient-1] INFO  o.a.kafka.common.metrics.Metrics - [traceId= spanId=                ] - Closing reporter org.apache.kafka.common.metrics.JmxReporter
+2025-12-27 23:21:34 [kafka-admin-client-thread | adminclient-1] INFO  o.a.kafka.common.metrics.Metrics - [traceId= spanId=                ] - Metrics reporters closed
+2025-12-27 23:21:34 [main] INFO  o.s.b.w.e.netty.NettyWebServer - [traceId= spanId=                ] - Netty started on port 8083
+2025-12-27 23:21:34 [main] INFO  c.w.app.WorkoutSpringApplication - [traceId= spanId=                ] - Started WorkoutSpringApplication in 5.746 seconds (process running for 6.396)
+2025-12-27 23:22:06 [reactive-kafka-workout-webflux-service-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [traceId= spanId=                ] - [Consumer clientId=consumer-workout-webflux-service-1, groupId=workout-webflux-service] Successfully joined group with generation Generation{generationId=14, memberId='consumer-workout-webflux-service-1-fbb03f05-a911-4d85-b80a-2434cd96d8da', protocol='range'}
+2025-12-27 23:22:06 [reactive-kafka-workout-webflux-service-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [traceId= spanId=                ] - [Consumer clientId=consumer-workout-webflux-service-1, groupId=workout-webflux-service] Finished assignment for group at generation 14: {consumer-workout-webflux-service-1-fbb03f05-a911-4d85-b80a-2434cd96d8da=Assignment(partitions=[workout-commands-0])}
+2025-12-27 23:22:06 [reactive-kafka-workout-webflux-service-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [traceId= spanId=                ] - [Consumer clientId=consumer-workout-webflux-service-1, groupId=workout-webflux-service] Successfully synced group in generation Generation{generationId=14, memberId='consumer-workout-webflux-service-1-fbb03f05-a911-4d85-b80a-2434cd96d8da', protocol='range'}
+2025-12-27 23:22:06 [reactive-kafka-workout-webflux-service-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [traceId= spanId=                ] - [Consumer clientId=consumer-workout-webflux-service-1, groupId=workout-webflux-service] Notifying assignor about the new Assignment(partitions=[workout-commands-0])
+2025-12-27 23:22:06 [reactive-kafka-workout-webflux-service-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [traceId= spanId=                ] - [Consumer clientId=consumer-workout-webflux-service-1, groupId=workout-webflux-service] Adding newly assigned partitions: workout-commands-0
+2025-12-27 23:22:06 [reactive-kafka-workout-webflux-service-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [traceId= spanId=                ] - [Consumer clientId=consumer-workout-webflux-service-1, groupId=workout-webflux-service] Setting offset for partition workout-commands-0 to the committed offset FetchPosition{offset=10, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[kafka:29092 (id: 3 rack: null)], epoch=0}}
+2025-12-27 23:22:56 [reactor-http-epoll-3] INFO  o.a.k.c.producer.ProducerConfig - [traceId=e9792636b1e7d9c1cd5300d3cca02a45 spanId=242fb64f481c71d2] - ProducerConfig values: 
+	acks = -1
+	auto.include.jmx.reporter = true
+	batch.size = 16384
+	bootstrap.servers = [kafka:29092]
+	buffer.memory = 33554432
+	client.dns.lookup = use_all_dns_ips
+	client.id = producer-1
+	compression.type = none
+	connections.max.idle.ms = 540000
+	delivery.timeout.ms = 120000
+	enable.idempotence = true
+	interceptor.classes = []
+	key.serializer = class org.apache.kafka.common.serialization.StringSerializer
+	linger.ms = 0
+	max.block.ms = 60000
+	max.in.flight.requests.per.connection = 5
+	max.request.size = 1048576
+	metadata.max.age.ms = 300000
+	metadata.max.idle.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partitioner.adaptive.partitioning.enable = true
+	partitioner.availability.timeout.ms = 0
+	partitioner.class = null
+	partitioner.ignore.keys = false
+	receive.buffer.bytes = 32768
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 2147483647
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	transaction.timeout.ms = 60000
+	transactional.id = null
+	value.serializer = class org.apache.kafka.common.serialization.StringSerializer
+
+2025-12-27 23:22:56 [reactor-http-epoll-3] INFO  o.a.k.clients.producer.KafkaProducer - [traceId=e9792636b1e7d9c1cd5300d3cca02a45 spanId=242fb64f481c71d2] - [Producer clientId=producer-1] Instantiated an idempotent producer.
+2025-12-27 23:22:56 [reactor-http-epoll-3] INFO  o.a.kafka.common.utils.AppInfoParser - [traceId=e9792636b1e7d9c1cd5300d3cca02a45 spanId=242fb64f481c71d2] - Kafka version: 3.6.0
+2025-12-27 23:22:56 [reactor-http-epoll-3] INFO  o.a.kafka.common.utils.AppInfoParser - [traceId=e9792636b1e7d9c1cd5300d3cca02a45 spanId=242fb64f481c71d2] - Kafka commitId: 60e845626d8a465a
+2025-12-27 23:22:56 [reactor-http-epoll-3] INFO  o.a.kafka.common.utils.AppInfoParser - [traceId=e9792636b1e7d9c1cd5300d3cca02a45 spanId=242fb64f481c71d2] - Kafka startTimeMs: 1766877776926
+2025-12-27 23:22:56 [kafka-producer-network-thread | producer-1] INFO  org.apache.kafka.clients.Metadata - [traceId= spanId=                ] - [Producer clientId=producer-1] Cluster ID: EQy0TdwkRu2irAZJeb4lHw
+2025-12-27 23:22:56 [kafka-producer-network-thread | producer-1] INFO  o.a.k.c.p.i.TransactionManager - [traceId= spanId=                ] - [Producer clientId=producer-1] ProducerId set to 7000 with epoch 0
+2025-12-27 23:22:56 [kafka-producer-network-thread | producer-1] INFO  c.w.app.kafka.WorkoutCommandProducer - [traceId=e9792636b1e7d9c1cd5300d3cca02a45 spanId=242fb64f481c71d2] - Published create command for correlationId: 00fef731-1467-4e79-9e7a-43168f5fb27f
+2025-12-27 23:22:57 [reactive-kafka-workout-webflux-service-1] INFO  c.w.app.kafka.WorkoutCommandConsumer - [traceId=e9792636b1e7d9c1cd5300d3cca02a45 spanId=58387c9317351867] - Processing workout creation for correlationId: 00fef731-1467-4e79-9e7a-43168f5fb27f
+2025-12-27 23:22:57 [reactor-tcp-epoll-1] INFO  c.workout.app.service.WorkoutService - [traceId=e9792636b1e7d9c1cd5300d3cca02a45 spanId=58387c9317351867] - Saved workout to database with id: c0018cff-4c53-4b8d-9773-e240409388b9
+2025-12-27 23:22:57 [reactor-tcp-epoll-1] INFO  c.w.app.kafka.WorkoutCommandConsumer - [traceId=e9792636b1e7d9c1cd5300d3cca02a45 spanId=58387c9317351867] - Successfully processed and acknowledged record
