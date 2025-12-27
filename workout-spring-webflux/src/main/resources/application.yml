@@ -14,12 +14,19 @@ spring:
     url: jdbc:postgresql://${DB_HOST:localhost}:${DB_PORT:5436}/workout_db
     user: ${DB_USER:postgres}
     password: ${DB_PASSWORD:postgres}
+  kafka:
+    bootstrap-servers: ${KAFKA_BOOTSTRAP_SERVERS:localhost:9095}
+    producer:
+      observation-enabled: true
+    consumer:
+      observation-enabled: true
+    listener:
+      observation-enabled: true
 
 server:
   port: ${SERVER_PORT:8083}
 
 kafka:
-  bootstrap-servers: ${KAFKA_BOOTSTRAP_SERVERS:localhost:9095}
   topics:
     commands: workout-commands
     events: workout-events
@@ -31,7 +38,7 @@ management:
       probability: 1.0
   otlp:
     tracing:
-      endpoint: ${OTEL_EXPORTER_OTLP_ENDPOINT:http://localhost:4323}
+      endpoint: ${OTEL_EXPORTER_OTLP_ENDPOINT:http://localhost:4324/v1/traces}
   endpoints:
     web:
       exposure:

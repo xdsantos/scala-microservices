@@ -3,7 +3,6 @@ package com.workout.app.api;
 import com.workout.app.api.dto.*;
 import com.workout.app.service.WorkoutService;
 import jakarta.validation.Valid;
-import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -15,10 +14,7 @@ import java.util.UUID;
 @Slf4j
 @RestController
 @RequestMapping("/api/workouts")
-@RequiredArgsConstructor
-public class WorkoutController {
-
-    private final WorkoutService workoutService;
+public record WorkoutController(WorkoutService workoutService) {
 
     @PostMapping
     public Mono<ResponseEntity<AcceptedResponse>> createWorkout(@Valid @RequestBody CreateWorkoutRequest request) {
@@ -54,7 +50,7 @@ public class WorkoutController {
     @DeleteMapping("/{id}")
     public Mono<ResponseEntity<Void>> deleteWorkout(@PathVariable UUID id) {
         return workoutService.delete(id)
-                .map(deleted -> deleted ? ResponseEntity.noContent().<Void>build() : ResponseEntity.notFound().build());
+                .map(deleted -> Boolean.TRUE.equals(deleted) ? ResponseEntity.noContent().<Void>build() : ResponseEntity.notFound().build());
     }
 
     @GetMapping("/type/{type}")

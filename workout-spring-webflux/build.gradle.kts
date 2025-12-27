@@ -28,6 +28,7 @@ dependencies {
 
     // Observability / OTel
     implementation("io.micrometer:micrometer-tracing-bridge-otel")
+    implementation("io.micrometer:context-propagation")
     implementation("io.opentelemetry:opentelemetry-exporter-otlp")
     implementation("io.opentelemetry:opentelemetry-sdk")
 
