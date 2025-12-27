@@ -1,0 +1,3 @@
+[0m[[0m[0mdebug[0m] [0m[0mCopy resource mappings: [0m
+[0m[[0m[0mdebug[0m] [0m[0m	(C:\Users\rxdug\dev\scala-microservices\workout-cats\src\main\resources\application.conf,C:\Users\rxdug\dev\scala-microservices\workout-cats\target\scala-2.13\classes\application.conf)[0m
+[0m[[0m[0mdebug[0m] [0m[0m	(C:\Users\rxdug\dev\scala-microservices\workout-cats\src\main\resources\db\migration\V1__create_workouts.sql,C:\Users\rxdug\dev\scala-microservices\workout-cats\target\scala-2.13\classes\db\migration\V1__create_workouts.sql)[0m

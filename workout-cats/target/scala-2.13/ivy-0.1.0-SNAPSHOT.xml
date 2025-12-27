@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ivy-module version="2.0" xmlns:e="http://ant.apache.org/ivy/extra">
+  <info organisation="com.workout" module="workout-cats-service_2.13" revision="0.1.0-SNAPSHOT" status="integration" publication="20251227114407">
+    <description>workout-cats-service</description>
+  </info>
+  <configurations>
+    <conf name="plugin" visibility="public" description=""/>
+    <conf name="pom" visibility="public" description=""/>
+    <conf extends="runtime" name="test" visibility="public" description=""/>
+    <conf name="provided" visibility="public" description=""/>
+    <conf extends="compile,optional,provided" name="compile-internal" visibility="public" description=""/>
+    <conf name="docs" visibility="public" description=""/>
+    <conf name="optional" visibility="public" description=""/>
+    <conf name="compile" visibility="public" description=""/>
+    <conf extends="test,optional,provided" name="test-internal" visibility="public" description=""/>
+    <conf name="scala-tool" visibility="public" description=""/>
+    <conf name="scala-doc-tool" visibility="public" description=""/>
+    <conf name="sources" visibility="public" description=""/>
+    <conf extends="compile" name="runtime" visibility="public" description=""/>
+    <conf extends="runtime,optional" name="runtime-internal" visibility="public" description=""/>
+  </configurations>
+  <publications>
+    <artifact name="workout-cats-service_2.13" type="jar" ext="jar" conf="compile"/>
+    <artifact e:classifier="sources" name="workout-cats-service_2.13" type="src" ext="jar" conf="sources"/>
+    <artifact e:classifier="javadoc" name="workout-cats-service_2.13" type="doc" ext="jar" conf="docs"/>
+    <artifact name="workout-cats-service_2.13" type="pom" ext="pom" conf="pom"/>
+  </publications>
+  <dependencies>
+    <dependency org="org.scala-lang" name="scala-compiler" rev="2.13.14" conf="scala-tool->default"> </dependency>
+    <dependency org="org.scala-lang" name="scala-compiler" rev="2.13.14" conf="scala-tool->optional(default)"> </dependency>
+    <dependency org="org.scala-lang" name="scala-library" rev="2.13.14" conf="scala-tool->default"> </dependency>
+    <dependency org="org.scala-lang" name="scala-library" rev="2.13.14" conf="scala-tool->optional(default)"> </dependency>
+    <dependency org="org.scala-lang" name="scala-library" rev="2.13.14" conf="compile->default(compile)"> </dependency>
+    <dependency org="org.typelevel" name="cats-effect_2.13" rev="3.5.4" conf="compile->default(compile)"> </dependency>
+    <dependency org="org.http4s" name="http4s-ember-server_2.13" rev="0.23.24" conf="compile->default(compile)"> </dependency>
+    <dependency org="org.http4s" name="http4s-circe_2.13" rev="0.23.24" conf="compile->default(compile)"> </dependency>
+    <dependency org="org.http4s" name="http4s-dsl_2.13" rev="0.23.24" conf="compile->default(compile)"> </dependency>
+    <dependency org="io.circe" name="circe-core_2.13" rev="0.14.6" conf="compile->default(compile)"> </dependency>
+    <dependency org="io.circe" name="circe-generic_2.13" rev="0.14.6" conf="compile->default(compile)"> </dependency>
+    <dependency org="io.circe" name="circe-parser_2.13" rev="0.14.6" conf="compile->default(compile)"> </dependency>
+    <dependency org="org.tpolecat" name="doobie-core_2.13" rev="1.0.0-RC4" conf="compile->default(compile)"> </dependency>
+    <dependency org="org.tpolecat" name="doobie-hikari_2.13" rev="1.0.0-RC4" conf="compile->default(compile)"> </dependency>
+    <dependency org="org.tpolecat" name="doobie-postgres_2.13" rev="1.0.0-RC4" conf="compile->default(compile)"> </dependency>
+    <dependency org="org.flywaydb" name="flyway-core" rev="9.22.3" conf="compile->default(compile)"> </dependency>
+    <dependency org="org.postgresql" name="postgresql" rev="42.6.0" conf="compile->default(compile)"> </dependency>
+    <dependency org="com.github.fd4s" name="fs2-kafka_2.13" rev="3.5.1" conf="compile->default(compile)"> </dependency>
+    <dependency org="io.opentelemetry" name="opentelemetry-api" rev="1.32.0" conf="compile->default(compile)"> </dependency>
+    <dependency org="io.opentelemetry" name="opentelemetry-sdk" rev="1.32.0" conf="compile->default(compile)"> </dependency>
+    <dependency org="io.opentelemetry" name="opentelemetry-exporter-otlp" rev="1.32.0" conf="compile->default(compile)"> </dependency>
+    <dependency org="com.typesafe" name="config" rev="1.4.3" conf="compile->default(compile)"> </dependency>
+    <dependency org="ch.qos.logback" name="logback-classic" rev="1.4.11" conf="compile->default(compile)"> </dependency>
+  </dependencies>
+</ivy-module>

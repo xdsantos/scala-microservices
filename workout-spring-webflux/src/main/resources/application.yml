@@ -1,0 +1,41 @@
+spring:
+  application:
+    name: workout-spring-webflux
+  datasource:
+    url: jdbc:postgresql://${DB_HOST:localhost}:${DB_PORT:5436}/workout_db
+    username: ${DB_USER:postgres}
+    password: ${DB_PASSWORD:postgres}
+  r2dbc:
+    url: r2dbc:postgresql://${DB_HOST:localhost}:${DB_PORT:5436}/workout_db
+    username: ${DB_USER:postgres}
+    password: ${DB_PASSWORD:postgres}
+  flyway:
+    enabled: true
+    url: jdbc:postgresql://${DB_HOST:localhost}:${DB_PORT:5436}/workout_db
+    user: ${DB_USER:postgres}
+    password: ${DB_PASSWORD:postgres}
+
+server:
+  port: ${SERVER_PORT:8083}
+
+kafka:
+  bootstrap-servers: ${KAFKA_BOOTSTRAP_SERVERS:localhost:9095}
+  topics:
+    commands: workout-commands
+    events: workout-events
+  group-id: workout-spring-webflux
+
+management:
+  tracing:
+    sampling:
+      probability: 1.0
+  otlp:
+    tracing:
+      endpoint: ${OTEL_EXPORTER_OTLP_ENDPOINT:http://localhost:4323}
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics,tracing
+
+# Remove old otel/tracing block if it exists
+

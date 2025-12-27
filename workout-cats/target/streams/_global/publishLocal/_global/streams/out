@@ -1,0 +1,10 @@
+[0m[[0m[0minfo[0m] [0m[0m:: delivering :: com.workout#workout-cats-service_2.13;0.1.0-SNAPSHOT :: 0.1.0-SNAPSHOT :: integration :: Sat Dec 27 11:44:07 GMT 2025[0m
+[0m[[0m[0mdebug[0m] [0m[0m	options = status=integration pubdate=Sat Dec 27 11:44:07 GMT 2025 validate=true resolveDynamicRevisions=true merge=true resolveId=null pubBranch=null[0m
+[0m[[0m[0minfo[0m] [0m[0m	delivering ivy file to C:\Users\rxdug\dev\scala-microservices\workout-cats\target\scala-2.13\ivy-0.1.0-SNAPSHOT.xml[0m
+[0m[[0m[0mdebug[0m] [0m[0m	deliver done (29ms)[0m
+[0m[[0m[0mdebug[0m] [0m[0mlocal do not support transaction. ivy pattern does not use revision as a directory[0m
+[0m[[0m[0minfo[0m] [0m[0m	published workout-cats-service_2.13 to C:\Users\rxdug\.ivy2\local\com.workout\workout-cats-service_2.13\0.1.0-SNAPSHOT\poms\workout-cats-service_2.13.pom[0m
+[0m[[0m[0minfo[0m] [0m[0m	published workout-cats-service_2.13 to C:\Users\rxdug\.ivy2\local\com.workout\workout-cats-service_2.13\0.1.0-SNAPSHOT\jars\workout-cats-service_2.13.jar[0m
+[0m[[0m[0minfo[0m] [0m[0m	published workout-cats-service_2.13 to C:\Users\rxdug\.ivy2\local\com.workout\workout-cats-service_2.13\0.1.0-SNAPSHOT\srcs\workout-cats-service_2.13-sources.jar[0m
+[0m[[0m[0minfo[0m] [0m[0m	published workout-cats-service_2.13 to C:\Users\rxdug\.ivy2\local\com.workout\workout-cats-service_2.13\0.1.0-SNAPSHOT\docs\workout-cats-service_2.13-javadoc.jar[0m
+[0m[[0m[0minfo[0m] [0m[0m	published ivy to C:\Users\rxdug\.ivy2\local\com.workout\workout-cats-service_2.13\0.1.0-SNAPSHOT\ivys\ivy.xml[0m

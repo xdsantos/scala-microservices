@@ -1,0 +1,102 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:15-alpine
+    container_name: workout-webflux-postgres
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: workout_db
+    ports:
+      - "5436:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  zookeeper:
+    image: confluentinc/cp-zookeeper:7.5.0
+    container_name: workout-webflux-zookeeper
+    environment:
+      ZOOKEEPER_CLIENT_PORT: 2184
+      ZOOKEEPER_TICK_TIME: 2000
+    ports:
+      - "2184:2181"
+
+  kafka:
+    image: confluentinc/cp-kafka:7.5.0
+    container_name: workout-webflux-kafka
+    depends_on:
+      - zookeeper
+    ports:
+      - "9095:9092"
+      - "29095:29092"
+    environment:
+      KAFKA_BROKER_ID: 3
+      KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
+      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://kafka:29092,PLAINTEXT_HOST://localhost:9095
+      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: PLAINTEXT:PLAINTEXT,PLAINTEXT_HOST:PLAINTEXT
+      KAFKA_INTER_BROKER_LISTENER_NAME: PLAINTEXT
+      KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
+      KAFKA_AUTO_CREATE_TOPICS_ENABLE: "true"
+    healthcheck:
+      test: ["CMD-SHELL", "kafka-topics --bootstrap-server localhost:9092 --list"]
+      interval: 10s
+      timeout: 10s
+      retries: 5
+
+  jaeger:
+    image: jaegertracing/all-in-one:1.51
+    container_name: workout-webflux-jaeger
+    ports:
+      - "18689:16686"
+      - "4323:4317"
+      - "4324:4318"
+    environment:
+      COLLECTOR_OTLP_ENABLED: "true"
+
+  adminer:
+    image: adminer:latest
+    container_name: workout-webflux-adminer
+    depends_on:
+      - postgres
+    ports:
+      - "8084:8080"
+
+  workout-webflux-service:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: workout-webflux-service:latest
+    container_name: workout-webflux-service
+    depends_on:
+      postgres:
+        condition: service_healthy
+      kafka:
+        condition: service_healthy
+      jaeger:
+        condition: service_started
+    ports:
+      - "8083:8083"
+    environment:
+      SERVER_PORT: "8083"
+      DB_HOST: "postgres"
+      DB_PORT: "5432"
+      DB_USER: "postgres"
+      DB_PASSWORD: "postgres"
+      KAFKA_BOOTSTRAP_SERVERS: "kafka:29092"
+      KAFKA_TOPIC: "workout-events"
+      KAFKA_COMMAND_TOPIC: "workout-commands"
+      KAFKA_GROUP_ID: "workout-webflux-service"
+      OTEL_ENABLED: "true"
+      OTEL_EXPORTER_OTLP_ENDPOINT: "http://jaeger:4317"
+    profiles:
+      - full
+
+volumes:
+  postgres_data:
+
