@@ -4,6 +4,7 @@ import com.workout.app.api.dto.CreateWorkoutRequest;
 import com.workout.app.api.dto.UpdateWorkoutRequest;
 import com.workout.app.domain.Workout;
 import com.workout.app.kafka.WorkoutCommandProducer;
+import com.workout.app.mapper.WorkoutMapper;
 import com.workout.app.repository.WorkoutRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -11,7 +12,6 @@ import org.springframework.stereotype.Service;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
-import java.time.Instant;
 import java.util.UUID;
 
 @Slf4j
@@ -21,22 +21,14 @@ public class WorkoutService {
 
     private final WorkoutRepository repository;
     private final WorkoutCommandProducer producer;
+    private final WorkoutMapper workoutMapper;
 
     public Mono<UUID> createAsync(CreateWorkoutRequest request) {
         return producer.publishCreateCommand(request);
     }
 
     public Mono<Workout> create(CreateWorkoutRequest request) {
-        Workout workout = new Workout();
-        workout.setName(request.name());
-        workout.setDescription(request.description());
-        workout.setWorkoutType(request.workoutType().name());
-        workout.setDurationMinutes(request.durationMinutes());
-        workout.setCaloriesBurned(request.caloriesBurned());
-        workout.setDifficulty(request.difficulty().name());
-        workout.setCreatedAt(Instant.now());
-        workout.setUpdatedAt(Instant.now());
-
+        Workout workout = workoutMapper.toWorkout(request);
         return repository.save(workout)
                 .doOnSuccess(w -> log.info("Saved workout to database with id: {}", w.getId()));
     }
@@ -52,13 +44,7 @@ public class WorkoutService {
     public Mono<Workout> update(UUID id, UpdateWorkoutRequest request) {
         return repository.findById(id)
                 .flatMap(existing -> {
-                    if (request.name() != null) existing.setName(request.name());
-                    if (request.description() != null) existing.setDescription(request.description());
-                    if (request.workoutType() != null) existing.setWorkoutType(request.workoutType().name());
-                    if (request.durationMinutes() != null) existing.setDurationMinutes(request.durationMinutes());
-                    if (request.caloriesBurned() != null) existing.setCaloriesBurned(request.caloriesBurned());
-                    if (request.difficulty() != null) existing.setDifficulty(request.difficulty().name());
-                    existing.setUpdatedAt(Instant.now());
+                    workoutMapper.updateWorkoutFromRequest(request, existing);
                     return repository.save(existing);
                 });
     }
